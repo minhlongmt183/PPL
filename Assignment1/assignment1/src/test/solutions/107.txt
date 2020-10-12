@@ -1,1 +1,1 @@
-Error Token "
+ab'"c\n def,<EOF>

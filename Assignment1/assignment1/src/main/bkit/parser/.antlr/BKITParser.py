@@ -11,9 +11,9 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3A")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3@")
         buf.write("\13\4\2\t\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\2")
-        buf.write("\t\2\4\3\2\2\2\4\5\7\24\2\2\5\6\7-\2\2\6\7\7A\2\2\7\b")
+        buf.write("\t\2\4\3\2\2\2\4\5\7\24\2\2\5\6\7-\2\2\6\7\7\3\2\2\7\b")
         buf.write("\7*\2\2\b\t\7\2\2\3\t\3\3\2\2\2\2")
         return buf.getvalue()
 
@@ -48,7 +48,7 @@ class BKITParser ( Parser ):
                       "INT_PART", "DEC_PART", "EXP_PART", "BOOL_LIT", "STRING_LIT", 
                       "UNCLOSE_STRING", "ARRAY_LIT", "ELEM_LIT", "SUB_ARRAY", 
                       "ELEM_VAL", "WS", "ERROR_CHAR", "ILLEGAL_ESCAPE", 
-                      "UNTERMINATED_COMMENT", "ID" ]
+                      "UNTERMINATED_COMMENT" ]
 
     RULE_program = 0
 
@@ -117,7 +117,6 @@ class BKITParser ( Parser ):
     ERROR_CHAR=60
     ILLEGAL_ESCAPE=61
     UNTERMINATED_COMMENT=62
-    ID=63
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -140,8 +139,8 @@ class BKITParser ( Parser ):
         def COLON(self):
             return self.getToken(BKITParser.COLON, 0)
 
-        def ID(self):
-            return self.getToken(BKITParser.ID, 0)
+        def IDENT(self):
+            return self.getToken(BKITParser.IDENT, 0)
 
         def SEMI(self):
             return self.getToken(BKITParser.SEMI, 0)
@@ -166,7 +165,7 @@ class BKITParser ( Parser ):
             self.state = 3
             self.match(BKITParser.COLON)
             self.state = 4
-            self.match(BKITParser.ID)
+            self.match(BKITParser.IDENT)
             self.state = 5
             self.match(BKITParser.SEMI)
             self.state = 6
