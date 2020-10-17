@@ -35,6 +35,10 @@ class TestLexer:
             dest.close() 
         dest = open("./test/solutions/" + str(num) + ".txt","r")
         line = dest.read()
+        if line != expect:
+            #print('Input: ')
+            print('result: ', line)
+            print('expect: ', expect)
         return line == expect
 
     @staticmethod    
