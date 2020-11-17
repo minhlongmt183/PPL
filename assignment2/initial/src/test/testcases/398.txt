@@ -1,0 +1,18 @@
+ 
+                Var: x;
+                Function: fact
+                Parameter: n
+                Body:
+                    If n == 0 Then
+                            a = int_of_string (read ());
+                    Else
+                            b = float_of_int (a) +. 2.0;
+                    EndIf.
+                EndBody.
+                Function: main
+                Body:
+                    x = 10;
+                    fact (x);
+                    printStrLn(arg);
+                    read();
+                EndBody.

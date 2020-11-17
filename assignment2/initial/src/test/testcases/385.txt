@@ -1,0 +1,7 @@
+
+            Function: test 
+            Body:
+                Var: arr[2][3] = {"Tuasfi",{"asd","asd"},{"tsas",{"caccas"},12}}; 
+                e = 3 +. 10e2;
+            EndBody.
+            

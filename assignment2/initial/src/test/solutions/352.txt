@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][Assign(Id(string),StringLiteral(Xin chao))]))])

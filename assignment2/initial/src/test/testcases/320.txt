@@ -1,0 +1,8 @@
+Function: foo 
+        Body:
+            If True Then
+                x = 3;
+            Else 
+                x = 2;
+            EndIf.
+        EndBody.

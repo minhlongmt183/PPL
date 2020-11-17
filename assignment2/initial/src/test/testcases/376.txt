@@ -1,0 +1,21 @@
+
+            Var: x[12]={12};
+            Var: arr[5][6] = {1,2}, y[1];
+            Var:x[0x12][13]=5; 
+            Function: foo 
+            Body:
+            If True Then
+                Var: x[12]={12};
+                Var: arr[5][6] = {1,2}, y[1];
+                Var:x[0x12][13]=5; 
+                x = 1;
+                y = 2;
+                z = 3;
+                z = (x*x*x*x*x*x*x)\.(2.*.y -. 2.3e12 + 23\11 + 12%2) - test();
+                If (a == True) Then a = False;
+                ElseIf (b == True) Then b = False;
+                ElseIf (c == True) Then c = False;
+                Else d = False;
+                EndIf.
+            EndIf.
+        EndBody.

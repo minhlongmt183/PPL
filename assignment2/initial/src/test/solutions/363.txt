@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][Assign(Id(a),BinaryOp(+,CallExpr(Id(foo),[Id(a),Id(b)]),CallExpr(Id(goo),[Id(x)])))]))])

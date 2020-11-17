@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][While(IntLiteral(1),[],[While(UnaryOp(!,Id(x)),[],[Assign(Id(x),BooleanLiteral(true))])])]))])

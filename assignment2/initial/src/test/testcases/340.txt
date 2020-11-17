@@ -1,0 +1,8 @@
+Function: foo 
+        Parameter: n
+        Body: 
+        EndBody.
+        Function: goo 
+        Parameter: n
+        Body: 
+        EndBody.

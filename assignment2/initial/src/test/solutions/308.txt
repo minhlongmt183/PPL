@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([VarDecl(Id(x),[12],ArrayLiteral(IntLiteral(12)))][]))])

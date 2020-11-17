@@ -1,0 +1,8 @@
+Function: foo 
+        Parameter: n
+        Body: 
+            Do
+                Return a+3;
+            While True
+            EndDo.
+        EndBody.

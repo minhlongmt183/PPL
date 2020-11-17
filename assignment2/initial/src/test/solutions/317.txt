@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(a))],([][Assign(Id(x),UnaryOp(!,IntLiteral(3)))]))])

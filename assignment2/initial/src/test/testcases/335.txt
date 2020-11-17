@@ -1,0 +1,5 @@
+Function: foo 
+        Parameter: n
+        Body: 
+            test(a,3*7, a+ 5,"string",True);
+        EndBody.

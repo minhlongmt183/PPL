@@ -48,7 +48,7 @@ variable_decl
 
 
 init_value
-    : literal (COMMA literal)*
+    : literal
     ;
 
 literal
@@ -168,6 +168,7 @@ variable_list
 variable
     : scal_var
     | comp_var
+    | expression
     ;
 
 scal_var
@@ -195,7 +196,7 @@ exp1
     ;
 
 exp2
-    : exp2 ('+' | '+.' | '-' | '-.')+ exp3
+    : exp2 ('+' | '+.' | '-' | '-.') exp3
     | exp3
     ;
 exp3
@@ -224,6 +225,7 @@ exp7
 name_index_op
     : IDENT
     | func_call_expr
+    | LR expression RR
     ;
 
 

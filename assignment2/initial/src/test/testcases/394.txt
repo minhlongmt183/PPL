@@ -1,0 +1,7 @@
+ Function: foo
+                        Parameter: x,y[3],z[4][5]
+                        Body:
+                            z = 5;
+                            test(x,y[1],z[2][2],"string",True);
+                        EndBody.
+                    

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(test)[],([VarDecl(Id(arr),[2,3],ArrayLiteral(StringLiteral(Tuasfi),ArrayLiteral(StringLiteral(asd),StringLiteral(asd)),ArrayLiteral(StringLiteral(tsas),ArrayLiteral(StringLiteral(caccas)),IntLiteral(12))))][Assign(Id(e),BinaryOp(+.,IntLiteral(3),FloatLiteral(1000.0)))]))])

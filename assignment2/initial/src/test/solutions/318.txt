@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][Assign(Id(n),BinaryOp(+,IntLiteral(9),BinaryOp(\,IntLiteral(2),IntLiteral(2))))]))])

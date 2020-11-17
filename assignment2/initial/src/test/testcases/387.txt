@@ -1,0 +1,6 @@
+
+            Function: test 
+            Body:
+                a[True] = (foo(a+b,c >d) + 12.e3) *. 0x123;
+            EndBody.
+            

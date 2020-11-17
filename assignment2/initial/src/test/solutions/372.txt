@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(test)[VarDecl(Id(n))],([VarDecl(Id(x))][For(Id(i),IntLiteral(0),BinaryOp(<,Id(i),BinaryOp(*,CallExpr(Id(sqrt),[Id(n)]),IntLiteral(2))),IntLiteral(1),[],[Assign(Id(x),BinaryOp(+,Id(i),Id(n))),CallStmt(Id(writeln),[BinaryOp(\,Id(x),IntLiteral(2))])])]))])

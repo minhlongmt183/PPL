@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(sum)[VarDecl(Id(lst))],([][Assign(Id(func),BinaryOp(+,Id(x),Id(y))),Assign(Id(rs),CallExpr(Id(reduce),[Id(func),ArrayCell(Id(lst),[IntLiteral(1)]),ArrayCell(Id(lst),[IntLiteral(0)])]))]))])

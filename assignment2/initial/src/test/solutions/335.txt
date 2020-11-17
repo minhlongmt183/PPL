@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][CallStmt(Id(test),[Id(a),BinaryOp(*,IntLiteral(3),IntLiteral(7)),BinaryOp(+,Id(a),IntLiteral(5)),StringLiteral(string),BooleanLiteral(true)])]))])

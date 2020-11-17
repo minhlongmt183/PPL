@@ -1,0 +1,17 @@
+ Function: testForStatement
+                        Parameter: x, array[10][10][10][10]
+                        Body:
+                            For (i = 1, i < x*x , i + 1 ) Do
+                                For( j = 1, j < x*x ,j + 1) Do
+                                    For( k = 1, k < x*x , k + 1 ) Do
+                                        For( l = 1 , l < x*x ,l + 1) Do
+                                            r = 3.14;
+                                            s = r*r + 2;
+                                            t = s && !foo(2) || r =/= 9. && (2+3)*.5.;
+                                            t = t \. 3.;
+                                        EndFor.
+                                    EndFor.
+                                EndFor.    
+                            EndFor.
+                        EndBody.
+                    

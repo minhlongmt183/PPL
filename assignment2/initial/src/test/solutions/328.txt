@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][Dowhile([],[Return(CallExpr(Id(foo),[Id(x),Id(y)]))],BooleanLiteral(true))]))])

@@ -1,0 +1,8 @@
+Function: test
+            Body:
+                Return a;
+                Return ;
+                Return "abc";
+                Return none;
+                Return **Comment**;
+            EndBody.  

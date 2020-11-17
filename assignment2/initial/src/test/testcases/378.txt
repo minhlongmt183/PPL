@@ -1,0 +1,12 @@
+
+            Var: x= "Stringasdfa";
+            Function: test
+            Body:
+                a= "bc" +"bc" +"bc" +"bc" +"bc" + **abd** "bc";
+                a= "bc" +"bc" +"bc" +"bc" +"bc" +"bc";
+                a= "bc" +"bc" +"bc" +"bc" +"bc" +"bc";
+                a= "bc" +"bc" +"bc" +"bc" +"bc" +"bc";
+                a= "bc" +"bc" +"bc" +"bc" +"bc" +"bc";
+                Break;
+            EndBody.
+            

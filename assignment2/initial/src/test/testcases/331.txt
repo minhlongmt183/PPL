@@ -1,0 +1,8 @@
+Function: foo 
+        Parameter: n
+        Body: 
+            Do
+                Continue;
+            While True
+            EndDo.
+        EndBody.

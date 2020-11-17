@@ -1,0 +1,10 @@
+
+            Function: test
+            Body:
+                Var: a = 2;
+                For (index = foo(3*x), index < 100, "String" + {"abc","a"**A**}) Do
+                    writeln("Cacon");
+                    Break;
+                EndFor.
+            EndBody.
+            
