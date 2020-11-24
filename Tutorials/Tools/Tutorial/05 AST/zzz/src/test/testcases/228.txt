@@ -1,0 +1,11 @@
+
+Var 
+	S : String;
+
+Procedure main();
+Begin
+	S := "Hey there! How are you?";
+	S := Copy(S, 5, 6); { "there!" }
+	Write(S);
+End
+        

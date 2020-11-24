@@ -1,0 +1,7 @@
+
+                Procedure ThayTheTatCa (A:array[0 .. 10] of integer;N, x,y:Integer);
+                Var i:Integer;
+                BEgin
+                 //chi viet cmt thoi dc ko nhi
+                EnD
+                

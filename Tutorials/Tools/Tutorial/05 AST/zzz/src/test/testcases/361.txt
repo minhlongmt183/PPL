@@ -1,0 +1,11 @@
+
+Var 
+	S : String;
+
+Procedure main();
+Begin
+	S := "Hey Max! Xi Xinh Dep ";
+	Delete(S, 4, 4); { "Hey! Xi Xinh Dep " }
+	Write(S);
+End
+        

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(hihi),[VarDecl(Id(N),FloatType)],IntType,[VarDecl(Id(i),IntType)],[For(Id(i)IntLiteral(2),BinaryOp(-,Id(N),IntLiteral(1)),True,[If(BooleanLiteral(True),[Return(Some(IntLiteral(0)))],[Return(Some(IntLiteral(1)))])])])])

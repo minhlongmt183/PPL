@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(Square),[VarDecl(Id(Index),IntType),VarDecl(Id(Result),IntType)],VoidType(),[],[AssignStmt(Id(Result),BinaryOp(*,Id(Index),Id(Index)))]),VarDecl(Id(Res),IntType),FuncDecl(Id(Main),[],VoidType(),[],[CallStmt(Id(Writeln),[StringLiteral(The square of 5 is: )]),CallStmt(Id(Square),[IntLiteral(5),Id(Res)]),CallStmt(Id(Writeln),[Id(Res)])])])

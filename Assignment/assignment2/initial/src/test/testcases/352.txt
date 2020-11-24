@@ -1,0 +1,9 @@
+
+        Function: main
+        Parameter: x, y, z
+        Body:
+            While x == 5 Do
+                print(x);
+            EndWhile.
+        EndBody.
+        

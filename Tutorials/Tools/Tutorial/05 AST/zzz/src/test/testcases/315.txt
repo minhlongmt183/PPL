@@ -1,0 +1,7 @@
+
+        Procedure xixinh (e: array[0 .. 10] of StrInG; b: boolean) ;
+        var a, c :integER;
+        BEgin
+            Readln(XiXInh);
+        EnD
+        

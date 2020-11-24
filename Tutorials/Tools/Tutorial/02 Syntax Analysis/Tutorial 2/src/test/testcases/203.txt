@@ -1,0 +1,9 @@
+int a, b, c;
+        float foo(int a; float c, d) {
+            int e;
+            e = a + 4;
+            c = a * d / 2.0;
+            return c + 1;
+        
+        }
+        

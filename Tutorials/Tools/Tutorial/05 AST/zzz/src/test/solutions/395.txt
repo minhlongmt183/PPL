@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(power),[VarDecl(Id(x),IntType)],IntType,[],[If(BinaryOp(=,Id(x),IntLiteral(0)),[Return(Some(IntLiteral(1)))],[Return(Some(BinaryOp(*,Id(x),CallExpr(Id(power),[BinaryOp(-,Id(x),IntLiteral(1))]))))])])])

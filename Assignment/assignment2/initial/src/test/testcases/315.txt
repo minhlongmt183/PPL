@@ -1,0 +1,6 @@
+Function: foo 
+         Parameter: n
+         Body: 
+             x = 1.e-12412;
+             func(x);
+         EndBody.

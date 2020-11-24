@@ -1,7 +1,0 @@
-Function: foo 
-        Body:
-            If True Then
-            ElseIf True Then
-                x = 2;
-            EndIf.
-        EndBody.

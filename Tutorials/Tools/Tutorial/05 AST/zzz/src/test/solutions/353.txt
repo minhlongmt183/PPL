@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),FloatType)],IntType,[],[While(IntLiteral(1),[Return(Some(CallExpr(Id(xix),[IntLiteral(0)])))])])])

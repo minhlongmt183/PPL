@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xxx),[VarDecl(Id(N),IntType)],BoolType,[VarDecl(Id(Flag),BoolType),VarDecl(Id(i),IntType)],[Return(Some(Id(Flag)))])])

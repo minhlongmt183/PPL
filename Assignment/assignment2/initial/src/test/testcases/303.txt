@@ -1,0 +1,13 @@
+
+            Var: x, y; 
+            Function: main 
+                Parameter: n 
+                Body: 
+                x = 7;
+                If n == 0 Then 
+                    Return 1; 
+                Else
+                    Return n * x;
+                EndIf.
+                EndBody. 
+        

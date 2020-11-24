@@ -1,0 +1,80 @@
+AST
+Type -> AST
+IntType -> Type
+FloatType -> Type
+StringType -> Type
+ArrayType -> Type
+    lower, upper, eleType
+VoidType -> Type
+
+Program -> AST
+    decl:list(Decl)
+Decl -> AST
+    
+VarDecl -> Decl
+    variable:Id
+    varType:Type
+FuncDecl -> Decl
+    name: Id
+    param: list(VarDecl)
+    local:list(VarDecl)
+    body: list(Stmt)
+    returnType: Type => VoidType for Procedure
+
+Stmt -> AST
+Assign -> Stmt
+    lhs:Expr
+    exp:Expr
+If -> Stmt
+    expr:Expr
+    thenStmt:list(Stmt)
+    elseStmt:list(Stmt)
+While -> Stmt
+    sl:list(Stmt)
+    exp: Expr
+For -> Stmt
+    id:Id
+    expr1,expr2:Expr
+    loop:list(Stmt)
+    up:Boolean #True => increase; False => decrease
+Break -> Stmt
+Continue -> Stmt
+Return -> Stmt
+    expr:Expr
+With -> Stmt
+    decl:list(VarDecl)
+    stmt:list(Stmt)
+CallStmt -> Stmt
+    method:Id
+    param:list(Expr)
+
+Expr -> AST
+BinaryOp -> Expr
+    op:string: AND THEN => andthen; OR ELSE => orelse; other => keep it
+    left:Expr
+    right:Expr
+UnaryOp -> Expr
+    op:string
+    body:Expr
+CallExpr -> Expr
+    method:Id
+    param:list(Expr)
+
+LHS -> Expr
+Id -> LHS
+    name:string
+ArrayCell -> LHS
+    arr:Expr
+    idx:Expr
+
+Literal -> Expr
+IntLiteral -> Literal
+    value:int
+FloatLiteral -> Literal
+    value:float
+StringLiteral -> Literal
+    value:string
+BooleanLiteral -> Literal
+    value:boolean
+
+

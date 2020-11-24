@@ -1,0 +1,5 @@
+Function: foo 
+        Parameter: n, arr[100]
+        Body: 
+
+        EndBody.

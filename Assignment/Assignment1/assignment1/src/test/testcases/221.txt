@@ -1,0 +1,7 @@
+
+        Function: main
+        Body:
+            Var: x = {2 + 1, foo(2), fact(4)};
+            Return 0;
+        EndBody.
+        

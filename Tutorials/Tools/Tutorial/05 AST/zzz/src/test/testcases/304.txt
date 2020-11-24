@@ -1,0 +1,2 @@
+var x, b:integer;
+        var a, b:string;

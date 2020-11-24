@@ -1,0 +1,5 @@
+
+        For (i = 0, i < 100, i ** i) Do
+            print(chr(ord(i)+a)));
+        EndFor.
+        

@@ -1,0 +1,6 @@
+function xix(c: real): integer;
+                   BEgin
+                    xix (3,a+1);
+                    xix1();
+                   EnD
+                   

@@ -1,0 +1,14 @@
+
+        Function: main
+        Body:
+            Var: x = 1.e-12373, y = 2.34134;
+            While (x =/= y) Do
+                If x > y Then
+                    x = x -. y;
+                Else 
+                    y = y -. x;
+                EndIf.
+            EndWhile.
+            Return 0;
+        EndBody.
+        

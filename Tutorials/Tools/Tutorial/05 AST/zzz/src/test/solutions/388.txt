@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xxx),[VarDecl(Id(A),IntType),VarDecl(Id(N),IntType)],BoolType,[VarDecl(Id(S),IntType),VarDecl(Id(i),IntType)],[AssignStmt(Id(S),IntLiteral(0)),Return(Some(Id(S)))])])

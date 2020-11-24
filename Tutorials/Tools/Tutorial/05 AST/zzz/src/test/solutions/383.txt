@@ -1,0 +1,1 @@
+Program([VarDecl(Id(PD),StringType),VarDecl(Id(Dname),StringType),VarDecl(Id(Cmodel),StringType),FuncDecl(Id(xixinh),[],VoidType(),[],[CallStmt(Id(ClrScr),[]),CallStmt(Id(GotoXy),[IntLiteral(28),IntLiteral(3)]),CallStmt(Id(Readln),[])])])

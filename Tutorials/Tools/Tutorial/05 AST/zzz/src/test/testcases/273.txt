@@ -1,0 +1,49 @@
+
+  VAR X, Y1, Y2,  First, Last, Incr, Factor: REAL;
+  Q1, Q2, Step:  INTEGER;
+  PROCEDURE main();
+  BEGIN
+  { Input plot  parameters }
+  Write("Enter  first value: ");
+  Read(First);
+  Write("Enter  last value: ");
+  Read(Last);
+  Write("Enter  scale factor: ");
+  Read(Factor);
+  Write("Enter an  increment: ");
+  Read(Incr);
+  WriteLn();
+  { Draw  horizontal Y axis }
+  FOR Step := 0 TO  MaxY DO
+  IF (Step MOD 5 =  0) THEN
+  Write("+");
+  ELSE
+  Write("-");
+  Write(" Y ");
+  WriteLn();
+  { Do the Plot on  its side }
+  X := First;
+  WHILE X <=  Last DO BEGIN
+  Y1 :=  SIN(3.14159 * X / 180.0);
+  Y1 := Factor *  Y1;
+  Q1 := ROUND(Y1);
+  Y2 := 0.005 * X;
+  Y2 := Factor *  Y2;
+  Q2 := ROUND(Y2);
+  FOR Step := 0 TO  MaxY DO
+  IF Step = 0 THEN
+  Write( "|");
+  ELSE
+  IF Step = Q1  THEN
+  Write( "*");
+  ELSE
+  IF Step = Q2  THEN
+  Write( "+");
+  ELSE
+  Write( " ");
+  WriteLn();
+  X := X + Incr;
+  END { WHILE }
+  Write("X");
+  END { SidePlotXY  }
+        

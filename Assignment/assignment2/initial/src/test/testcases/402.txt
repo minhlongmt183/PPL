@@ -1,0 +1,10 @@
+Function: more1
+		Parameter: a[5], b
+		Body:
+		Var: x = {{1,2,3}, **Comment here** "abc"};
+		Var: i = 0;
+		While (i < 5) Do
+		If i == 3 ThenReturn 1;EndIf.
+		i = i + 1;
+		EndWhile.
+		EndBody.

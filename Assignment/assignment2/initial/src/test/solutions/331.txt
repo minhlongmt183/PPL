@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(fibo)[VarDecl(Id(a),[100]),VarDecl(Id(n))],([][Return(ArrayCell(Id(a),[CallExpr(Id(fibo),[Id(n)])]))])),FuncDecl(Id(main)[],([][CallStmt(Id(print),[CallExpr(Id(fibo),[ArrayLiteral(IntLiteral(6145),IntLiteral(13512)),IntLiteral(6)])]),Assign(Id(x),IntLiteral(1423)),Return(IntLiteral(0))]))])

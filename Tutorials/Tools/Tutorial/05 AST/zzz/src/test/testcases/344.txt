@@ -1,0 +1,6 @@
+function xix(c: real): real;
+                   BEgin
+                    FOR i:=1 to m+ n do 
+                        s := s + 1;
+                   EnD
+                   

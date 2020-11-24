@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),FloatType)],VoidType(),[],[While(BinaryOp(<>,Id(a),IntLiteral(1)),[While(IntLiteral(1),[AssignStmt(Id(x),IntLiteral(1))]),If(BinaryOp(=,Id(a),IntLiteral(1)),[],[])])])])

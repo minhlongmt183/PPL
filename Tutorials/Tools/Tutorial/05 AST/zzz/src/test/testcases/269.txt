@@ -1,0 +1,21 @@
+
+var
+   greetings: string;
+   name: array [1 .. 10] of integer;
+   organisation: string;
+
+procedure main();
+begin
+   greetings := "Hello ";
+   message := "Good Day!";
+   
+   writeln("Please Enter your Name");
+   readln(name);
+   
+   writeln("Please Enter the name of your Organisation");
+   readln(organisation);
+   
+   writeln(greetings, name, " from ", organisation);
+   writeln(message); 
+end
+        

@@ -1,0 +1,7 @@
+
+        Function: main
+        Parameter: x
+        Body:
+            x = "adf" * {q23, 4, "af"}[Return 45;];
+        EndBody.
+        

@@ -1,0 +1,8 @@
+
+        Function: main
+        Body:
+            For(in, in < in, in)
+                in = aa[23][a][a];
+            EndFor.
+        EndBody.
+        

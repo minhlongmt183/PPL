@@ -1,0 +1,13 @@
+
+procedure main(); 
+var c1:integer;
+    c2:real;
+    c3:boolean;
+    c4:string;
+begin
+    c1 := -c1;
+    c2 := -c2;
+    c3 := not c3;
+    c1 := not - not False;
+    return;
+end

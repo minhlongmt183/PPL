@@ -1,0 +1,16 @@
+
+Function Factorial(n : Integer) : Integer;
+Var
+	Result : Integer;
+	i : Integer;
+
+Begin
+	Result := n;
+	If (n <= 1) Then
+		Result := 1;
+	Else
+	For i := n-1 DownTo 1 do
+		Result := Result * i; 
+	Factorial := Result;
+End
+        

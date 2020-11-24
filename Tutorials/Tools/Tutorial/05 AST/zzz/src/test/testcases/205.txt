@@ -1,0 +1,54 @@
+
+Var Sel: String;
+    N1,N2, Total : Real;
+    YN : String;  { this is a character variable type, which holds single characters ONLY }
+procedure main();
+Begin
+	Total := 0;  { always initialise integer/real variables }
+	GotoXy(4,3);
+	Writeln("1.Addition");
+	GotoXy(4,4);
+	Writeln("2.Subtraction");
+	GotoXy(4,5);
+	Writeln("3.Exit");
+	GotoXy(6,8);
+	Write("Select: ");
+	Sel := Readkey();
+
+	If Sel = "1" {condition} Then 
+	Begin  {more than one statement}
+		ClrScr();
+		Write("Input No.1:");
+		Readln(N1);
+		Write("Input No.2:");
+		Readln(N2);
+		Total := N1 + N2;
+		Writeln("Addition: ",N1," + ",N2," = ",Total);
+		Write("Press any key to continue...");
+		Readkey();
+	end { Closing the if statement }
+
+	If Sel = "2" Then { note that here we do not use an assignment statement } 
+	Begin 
+		ClrScr();
+		Write("Input No.1:");
+		Readln(N1);
+		Write("Input No.2:");
+		Readln(N2);
+		Total := N1 - N2;
+		Write("Subtraction: ");
+		Write(N1," - ",N2," = ",Total);
+		Write("Press any key to continue...");
+		Readkey();
+	end  { Closing the if statement }
+
+	If Sel = "3" Then 
+	Begin
+		ClrScr();
+		Write("Are you sure?(Y/N)");
+		YN := Readkey();
+		If YN = "y" Then Halt(); { 1 instruction, so no need of Begin..End }
+		If YN = "n" Then Goto1(); { the goto statement is not recommended for frequent use }
+	End
+End
+        

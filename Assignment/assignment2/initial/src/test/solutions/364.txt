@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main)[],([VarDecl(Id(x),IntLiteral(1)),VarDecl(Id(y),ArrayLiteral(IntLiteral(1),IntLiteral(2))),VarDecl(Id(c),FloatLiteral(0.0)),VarDecl(Id(sum),IntLiteral(0))][For(Id(i),IntLiteral(0),BinaryOp(<,Id(i),IntLiteral(10)),BinaryOp(+,Id(i),CallExpr(Id(f),[IntLiteral(2)])),[],[Assign(Id(sum),BinaryOp(*.,Id(i),IntLiteral(2)))]),Return(IntLiteral(0))]))])

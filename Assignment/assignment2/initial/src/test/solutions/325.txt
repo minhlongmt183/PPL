@@ -1,0 +1,1 @@
+Program([VarDecl(Id(a)),VarDecl(Id(b),IntLiteral(1)),VarDecl(Id(c),IntLiteral(2)),FuncDecl(Id(helloFunc)[],([VarDecl(Id(hello_msg),StringLiteral(H3ll0 W0rld))][Return(Id(hello_msg))])),FuncDecl(Id(main)[],([][CallStmt(Id(print),[CallExpr(Id(helloFunc),[])]),Return()]))])

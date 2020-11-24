@@ -1,0 +1,3 @@
+var a, b:integer;
+        var a, b:integer;
+            x, y :real  ;

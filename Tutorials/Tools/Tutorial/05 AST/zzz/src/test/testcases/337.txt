@@ -1,0 +1,5 @@
+Procedure xix(c: string) ;
+                   var x:real ;
+                   BEgin
+                    whILe(a=1) do BEgin EnD
+                   EnD

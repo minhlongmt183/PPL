@@ -1,0 +1,8 @@
+
+                Procedure haha(A : array[0 .. 10] of integer);
+                begin
+                    writeln("Hello");
+                    writeln("World");
+                    readln();
+                end
+                

@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(test)[],([VarDecl(Id(x),IntLiteral(10)),VarDecl(Id(a),[10,12,18])][Assign(Id(var),BinaryOp(&&,BinaryOp(\,BinaryOp(-,Id(x),IntLiteral(1)),IntLiteral(2)),BooleanLiteral(true)))]))])

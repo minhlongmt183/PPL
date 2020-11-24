@@ -1,0 +1,7 @@
+
+function A(a:integer):integer;
+var a:array[1 .. 2] of real;
+begin
+
+end
+        

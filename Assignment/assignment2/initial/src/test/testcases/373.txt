@@ -1,0 +1,15 @@
+
+        Function: main
+        Body:
+            Var: i[5]={1,2,3,4};
+            Var: j = 0;
+            For(i = 0, i <= 100 , i+1  ) Do
+                If i[j] == 10 Then
+                    Break;
+                Else
+                    Continue;
+                EndIf.
+            EndFor.  
+            Return 0;
+        EndBody.
+        

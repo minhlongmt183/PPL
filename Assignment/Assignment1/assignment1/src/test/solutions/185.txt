@@ -1,0 +1,1 @@
+If,(,func_var_,==,0,8231,),*,x,=,(,x,*,6,-,2,=/=,4,),>,>,3,+,some_number,*.,float_numb3r,;,EndIf,.,<EOF>

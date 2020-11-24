@@ -1,0 +1,7 @@
+
+        Function: foo
+        Parameter: a[5], b
+        Body:
+            Var: x[123][1][4] = True;
+        EndBody.
+        

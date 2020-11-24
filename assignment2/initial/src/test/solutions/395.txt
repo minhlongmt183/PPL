@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(testCallStatement)[VarDecl(Id(x)),VarDecl(Id(y)),VarDecl(Id(z))],([][If(BinaryOp(>,Id(x),Id(y)),[],[CallStmt(Id(sub),[Id(x),IntLiteral(1)])])Else([],[CallStmt(Id(add),[Id(x),IntLiteral(2)])])]))])

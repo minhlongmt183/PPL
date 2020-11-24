@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(file),[VarDecl(Id(n),IntType)],VoidType(),[],[CallStmt(Id(Assign),[Id(f),Id(fo)]),CallStmt(Id(Rewrite),[Id(f)]),CallStmt(Id(Close),[Id(f)])])])

@@ -1,0 +1,1 @@
+Var,:,i,=,0,;,While,(,i,<,5,),print,(,toString,(,i,*.,10,),),;,x,=,int,(,x,),;,EndWhile,.,<EOF>

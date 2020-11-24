@@ -1,0 +1,12 @@
+
+        ** **
+        Function: main
+        Parameter: asd[3 + 4 * f]
+        Body:
+            While i < 5 Do
+                x = 12.32;
+                Var: x = {{{1,  2 ,2e-124, "avc" , -1 }, {  4 , **erty**  5}  },  {{ 6  ,  7  },{ 8,9}}};
+            EndWhile.
+        EndBody.
+        ** **
+        

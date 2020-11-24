@@ -1,0 +1,13 @@
+
+Var 
+   S : String;
+   i : Integer;
+
+Procedure main();
+Begin
+	S := "Hey! How are you?";
+	For i := 1 to length(S) do
+		S[i] := UpCase(S[i]);
+	Write(S); { "HEY! HOW ARE YOU?" }
+End
+        

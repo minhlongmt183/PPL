@@ -1,2 +1,0 @@
-Var **some COMMENT**: ****someid = 3
-        **more more**;

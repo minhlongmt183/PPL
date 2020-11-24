@@ -1,0 +1,39 @@
+Program(
+    [VarDecl("b",IntType()),
+    FuncDecl("a",
+            [   VarDecl("m",FloatType()),
+                VarDecl("b",IntType()),
+                VarDecl("d",FloatType())
+            ],
+            (
+                [   ConstDecl(
+                        "c",
+                        IntLit(3)
+                    ),
+
+                    FuncDecl(
+                        "foo",
+                        [VarDecl("x",IntType())],
+                        (
+                            [   VarDecl("y",IntType()),
+                                VarDecl("z",IntType())
+                            ],
+                            [
+                                Id("y"),
+                                Id("x"),
+                                Id("foo"),
+                                Id("c"),
+                                Id("m"),
+                                Id("a")
+                            ]
+                        )
+                    )
+                ],
+                [   Id("foo"),
+                    Id("d"),
+                    Id("z")
+                ]
+            )
+        )
+    
+    ])

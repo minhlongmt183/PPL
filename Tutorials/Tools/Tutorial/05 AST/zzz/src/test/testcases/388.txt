@@ -1,0 +1,8 @@
+
+                Function xxx(A: integer ; N:Integer):boolean;
+                Var S,i :Integer;
+                BEgin
+                	S:=0;                	
+                	return S;
+                EnD
+                

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(ThayTheTatCa),[VarDecl(Id(A),ArrayType(0,10,IntType)),VarDecl(Id(N),IntType),VarDecl(Id(x),IntType),VarDecl(Id(y),IntType)],VoidType(),[VarDecl(Id(i),IntType)],[])])

@@ -1,0 +1,5 @@
+function xix(c: real): integer;
+                   BEgin
+                    while 1 do reTuRn xix(0);
+                   EnD
+                   

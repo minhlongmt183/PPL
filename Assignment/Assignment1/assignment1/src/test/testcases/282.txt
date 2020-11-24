@@ -1,0 +1,11 @@
+
+        Function: main
+        Body:
+            Var: a;
+            a = {{{{}}}, {123}};
+        EndBody.
+        Function: ff2
+        Body:
+            ;
+        EndBody.
+        

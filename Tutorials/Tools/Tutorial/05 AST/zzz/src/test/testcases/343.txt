@@ -1,0 +1,7 @@
+function xix(c: real): striNG;
+                   BEgin
+                    with c , d : integer ; c : array [1 .. 2] of real ; do
+                    with a , b : integer ; do
+                        xix2(a,b,"anc");
+                   EnD
+                   

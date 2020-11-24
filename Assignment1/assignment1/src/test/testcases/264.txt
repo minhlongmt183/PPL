@@ -1,8 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            Do
-                x = a + b;
-                writeln(x);
-            While(True || False || True || (a > b))
-        EndBody.

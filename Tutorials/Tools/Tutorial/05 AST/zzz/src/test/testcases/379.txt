@@ -1,0 +1,23 @@
+
+                var i: integer ;                
+                Procedure xixinh() ;
+                var
+	               xixinh: integer ;
+                BEgin
+	               xixinh := f() ;
+	               putIntLn(xixinh);
+	               with
+                    
+            		    f: integer;
+	               do BEgin
+		                xixinh := 100;
+		               
+	               EnD
+	               xxx (xixinh);
+                EnD
+                var g: real ;
+                function xxx(): integer ;
+                BEgin
+	               return;
+                EnD
+                

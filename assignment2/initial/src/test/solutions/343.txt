@@ -1,1 +1,0 @@
-Program([VarDecl(Id(x)),VarDecl(Id(a)),VarDecl(Id(b)),VarDecl(Id(c)),VarDecl(Id(a),[100])])

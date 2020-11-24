@@ -1,0 +1,19 @@
+
+Procedure DrawLine(X : Integer; Y : Integer);
+{ the declaration of the variables in brackets are called parameters }
+Var Counter : Integer; { this is called a local variable }
+Begin
+	GotoXy(X,Y); {here I use the arguments of X and Y}
+	textcolor(green);
+	For Counter := 1 to 10 do
+	Begin 
+		Write(chr(196));
+	End
+End
+
+Procedure main();
+Begin
+	
+	Readkey();
+End
+        

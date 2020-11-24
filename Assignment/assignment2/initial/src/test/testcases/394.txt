@@ -1,0 +1,9 @@
+Function: foo 
+        Parameter: n
+        Body: 
+            If (x == y) || (x =/= y) Then
+                x = ((n <=. 3e-173) && (x == 27e-375));
+            EndIf.
+            bool = (x < n) && (y > n);
+            value = (x - z);
+        EndBody.

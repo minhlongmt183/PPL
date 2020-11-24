@@ -1,0 +1,11 @@
+
+var a, b ,c:integer;
+
+procedure foo(a:integer; b:integer; c:integer);
+begin
+end
+
+procedure main();
+begin 
+    foo(1, 1, 1 * True);
+end

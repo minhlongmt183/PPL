@@ -1,0 +1,30 @@
+
+  { An Extended  Payroll program }
+  { Decision  nested in Else branch of outer Decision }
+  { Normal  indentation }
+  VAR Hours, Pay: INTEGER;
+  PROCEDURE main();
+  BEGIN
+  RegularRate := 10;
+  ExtraIncrease :=  5;
+  DoubleIncrease :=  5;
+  BaseHours := 40;
+  ExtraHours := 20;
+  HoursInWeek := 7 * 24;
+  DoubleTimeStart  := BaseHours + ExtraHours;
+  Write("Enter  hours: ");
+  Read(Hours);
+  WriteLn();
+  IF Hours >= 0  THEN { regular pay}
+  Pay :=  RegularRate * Hours;
+  IF Hours >  BaseHours THEN { add extra pay }
+  Pay := Pay +  ExtraIncrease * (Hours - BaseHours);
+  IF Hours >  DoubleTimeStart THEN { add double pay }
+  Pay := Pay +  DoubleIncrease *
+  (Hours - DoubleTimeStart);
+  IF (Hours <  0) OR (Hours > HoursInWeek) THEN
+  Pay := 0;
+  WriteLn("The  gross pay is ", Pay);
+  END {  NewExtendedPay }
+
+        

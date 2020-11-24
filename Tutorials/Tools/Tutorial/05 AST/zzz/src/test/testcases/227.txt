@@ -1,0 +1,13 @@
+
+Var
+	S : String;
+
+Procedure main();
+Begin
+	S := "Hey there! How are you?";
+	Write("The word \"How\" is found at char index ");
+	Writeln(Pos("How", S));
+	If Pos("Why", S) <= 0 Then
+		Writeln("\"Why\" is not found.");
+End
+        

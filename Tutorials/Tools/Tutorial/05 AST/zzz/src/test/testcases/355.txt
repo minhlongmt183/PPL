@@ -1,0 +1,5 @@
+function xix(c: real): integer;
+                   BEgin
+                     BEgin EnD
+                   EnD
+                   

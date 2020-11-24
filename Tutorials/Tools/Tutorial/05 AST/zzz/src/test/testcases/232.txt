@@ -1,0 +1,11 @@
+
+Var 
+	S1, S2 : String;
+
+Procedure main();
+Begin
+	S1 := "Hey!";
+	S2 := " How are you?";
+	Write(S1 + S2); { "Hey! How are you?" }
+End
+        

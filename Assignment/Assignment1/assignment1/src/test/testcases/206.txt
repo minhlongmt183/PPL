@@ -1,0 +1,12 @@
+
+        Var: x;
+        Function: main
+        Body:
+            Var: r = 10., v, i;
+            v = (4. \. 3.) *. 3.14 *. r *. r *. r;
+            For (i = 0, i < 10, 2) Do
+                writeln(i);
+            EndFor.
+            Return 0;
+        EndBody.
+        

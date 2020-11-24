@@ -1,0 +1,7 @@
+Procedure xixinh() ;
+                  var a, b, c : integer ;
+                    d: array [1 .. 5] of integer ;
+                    e , f : real ;
+                  BEgin
+                    hihi();
+                  EnD

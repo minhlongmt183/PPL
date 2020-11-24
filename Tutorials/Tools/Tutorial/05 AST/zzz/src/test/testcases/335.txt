@@ -1,0 +1,8 @@
+Procedure xix(c: real) ;
+                   var x:real ;
+                   BEgin
+                    if(a>1) then a:=1 ;
+                    if (1<2) then BEgin x:=1 ; EnD
+                    else xix(xx);
+                    return;
+                   EnD

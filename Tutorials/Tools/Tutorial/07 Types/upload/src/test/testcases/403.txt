@@ -1,0 +1,15 @@
+
+var conbocuoi1, conbocuoi2:integer;
+
+procedure main(); 
+var conbocuoi1:integer;
+    conbocuoi2:real;
+    conbocuoi3:string;
+begin
+    with conbocuoi4:integer;
+         conbocuoi4:array [1 .. 2] of real;
+    do
+        conbocuoi4 := 10;
+
+    return;
+end

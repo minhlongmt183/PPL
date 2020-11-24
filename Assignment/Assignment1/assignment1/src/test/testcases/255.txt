@@ -1,0 +1,14 @@
+
+        Function: main
+        Body:
+            Do
+                f_n_f(12);
+                While x Do
+                    Var: x;
+                    If x == 1 Then
+                        Var: x;
+                    EndIf.
+                EndWhile.
+            While True EndDo.
+        EndBody.
+        

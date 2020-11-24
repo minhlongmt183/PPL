@@ -1,0 +1,5 @@
+Function: breakandcontinuealone
+		Body:
+			Continue;
+			Break;
+		EndBody.

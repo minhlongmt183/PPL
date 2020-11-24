@@ -1,0 +1,11 @@
+
+Var
+	myVar : Integer;
+	myArray : Array[1 .. 5] of Integer;
+
+Procedure Main();
+Begin
+	myArray[2] := 25;
+	myVar := myArray[2];
+End
+        

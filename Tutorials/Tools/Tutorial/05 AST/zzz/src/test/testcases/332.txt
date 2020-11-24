@@ -1,0 +1,7 @@
+Procedure xix(c: real) ;
+                   var x:real ;
+                   BEgin
+                    if  (aa and x) then a:=1 ;
+                    else xix();
+                   EnD
+                   

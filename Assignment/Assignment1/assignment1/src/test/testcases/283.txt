@@ -1,0 +1,7 @@
+
+        Function: main
+        Body:
+            Var: a;
+            a = "123" * "123" , - 2 == "sss";
+        EndBody.
+        

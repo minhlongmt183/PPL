@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),BoolType)],ArrayType(-10,10,IntType),[VarDecl(Id(x),FloatType)],[While(BinaryOp(<>,Id(a),IntLiteral(1)),[CallStmt(Id(xix),[])])])])

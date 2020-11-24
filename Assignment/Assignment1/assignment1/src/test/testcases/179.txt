@@ -1,0 +1,5 @@
+
+            isTrue = False;
+            If (isTrue == True)
+                number = 0o123459;
+            EndIf.

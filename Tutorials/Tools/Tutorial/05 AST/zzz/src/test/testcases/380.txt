@@ -1,0 +1,6 @@
+
+                Procedure Hello(a, b:integer);
+                BEgin
+                    writeln("Hello, world!");
+                EnD
+                

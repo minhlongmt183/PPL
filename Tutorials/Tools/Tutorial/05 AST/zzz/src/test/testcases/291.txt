@@ -1,0 +1,5 @@
+
+procedure main();
+begin
+    writeln("33512007840ced1bb0aab68f47cb5f702abd494a15f26bcbe26a1e47af03d841");
+end

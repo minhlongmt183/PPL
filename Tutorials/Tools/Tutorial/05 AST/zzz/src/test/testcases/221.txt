@@ -1,0 +1,23 @@
+
+Var
+	t : String;
+	s : String;
+
+Procedure main();
+Begin
+	Assign(t, "C:\\ABC.DEF");
+	{$I-}   { disable i/o error checking }
+	Reset(t);
+	{$I+}   { enable again i/o error checking - important }
+	If (IOResult <> 0) Then
+	Begin
+		Writeln("The file required to be opened is not found!");
+		Readln();
+	End Else 
+	Begin
+		Readln(t,s);
+		Writeln("The first line of the file reads: ",s);
+		Close(t);
+	End
+End
+        

@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(test)[VarDecl(Id(n))],([][While(BinaryOp(>,Id(n),IntLiteral(0)),[],[If(BinaryOp(==,Id(n),IntLiteral(0)),[],[Break()])Else([],[Assign(Id(n),CallExpr(Id(toInt),[CallExpr(Id(sqrt),[Id(n)])]))])])]))])

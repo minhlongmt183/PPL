@@ -1,0 +1,35 @@
+
+  (* Demonstrates  some String actions *)
+  (* that involve  names of people *)
+  VAR FirstName,  LastName, FullName: STRING;
+  Count,  NameCount, Gap: INTEGER;
+  PROCEDURE main();
+  BEGIN
+  Space := "  ";
+  Hyphen := "-";
+  Greeting :=  "Hello there ";
+  Write("Enter the  number of names: ");
+  ReadLn(NameCount);
+  WriteLn();
+  WHILE NameCount  >0 DO BEGIN
+  Write("Enter a  name, last name first: ");
+  Read(FullName);
+  Gap :=  POS(Space, FullName); { NOTE }
+  IF Gap > 0  THEN BEGIN
+  LastName :=  Copy(FullName, 1, Gap);
+  Delete(FullName,  1, Gap); { NOTE }
+  FirstName :=  FullName;
+  IF Length(LastName) <= 4 THEN
+  WriteLn("That is  a short last name");
+  IF Pos(Hyphen,  LastName) <> 0 THEN
+  WriteLn("That is  a hyphenated name");
+  IF FirstName =  "Bill" THEN { etc., etc. }
+  WriteLn("Bill is  a good name ");
+  FullName :=  FirstName + Space + LastName;
+  WriteLn(Greeting,  FullName);
+  WriteLn();
+  END { IF }
+  NameCount :=  NameCount - 1;
+  END { WHILE }
+  END { NameParse  }
+        

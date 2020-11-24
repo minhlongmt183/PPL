@@ -1,0 +1,5 @@
+Procedure xix(c: real);
+                   BEgin
+                    coNtInUe ;
+                   EnD
+                   

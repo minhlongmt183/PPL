@@ -1,0 +1,17 @@
+
+                Function xongroi(m,n:integer):integer;
+               
+                 var a: real;
+                  BEgin
+                    for i := 1 to 10 do 
+                        x := x +1;                       
+					begin
+                        for i := 1 to 10 do 
+                        a := a +1;
+                        break;                    
+					end
+					for i := 1 to 10 do 
+                        y := y +1;
+                       
+                EnD
+                

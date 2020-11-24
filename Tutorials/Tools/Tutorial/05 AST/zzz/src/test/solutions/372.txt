@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(DrawLine),[],VoidType(),[VarDecl(Id(Counter),IntType)],[CallStmt(Id(textcolor),[Id(green)]),For(Id(Counter)IntLiteral(1),IntLiteral(10),True,[CallStmt(Id(Write),[CallExpr(Id(chr),[IntLiteral(196)])])])]),FuncDecl(Id(Main),[],VoidType(),[],[CallStmt(Id(Readkey),[])])])

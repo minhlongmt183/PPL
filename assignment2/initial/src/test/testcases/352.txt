@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: ** Xin chao**
-        string = "Xin chao";
-        EndBody.

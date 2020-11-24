@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(ntny),[VarDecl(Id(m),IntType),VarDecl(Id(n),IntType)],IntType,[VarDecl(Id(a),FloatType)],[For(Id(i)IntLiteral(1),IntLiteral(10),True,[AssignStmt(Id(a),BinaryOp(+,Id(a),IntLiteral(1)))]),Break])])

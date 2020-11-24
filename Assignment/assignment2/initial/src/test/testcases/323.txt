@@ -1,0 +1,5 @@
+Function: foo 
+        Parameter: n
+        Body: 
+            a[10+foo(8)] = x[y[2][n]] + 99;
+        EndBody.

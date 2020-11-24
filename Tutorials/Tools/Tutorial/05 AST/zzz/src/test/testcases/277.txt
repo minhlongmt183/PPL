@@ -1,0 +1,43 @@
+
+  (* Problem of  Interest on a loan *)
+  (* Computes: the  Balloon Payment total interest *)
+  VAR
+  Amount,  Duration, Payment, Interest,
+  Balance, Time,  IntSum: INTEGER;
+  Rate: REAL;
+  PROCEDURE main();
+  BEGIN
+  (* Input  necessary information *)
+  Write("Enter  amount of loan: ");
+  Read(Amount);
+  Write("Enter  payment amount: ");
+  Read(Payment);
+  Write("Enter the  duration in months: ");
+  Read(Duration);
+  WriteLn("Enter  annual interest rate ");
+  Write("as a  decimal percent: ");
+  Read(Rate);
+  Rate :=  Rate/1200; (* Convert to monthly *)
+  (* Compute the  Ballon Payment *)
+  Balance :=  Amount;
+  IntSum := 0;
+  Time := 1;
+  WHILE Time <  Duration DO BEGIN
+  Interest :=  TRUNC(Balance * Rate);
+  Balance :=  Balance + Interest;
+  Balance :=  Balance - Payment;
+  IntSum := IntSum  + Interest;
+  Time := Time +  1;
+  (* Begin trace  ************************)
+  Write(Time);
+  Write(" Balance  = ");
+  WriteLn(Balance);
+  (* End trace  **************************)
+  END (* WHILE *)
+  (* Output all  required Results *)
+  Write("Balloon  Balance is: ");
+  WriteLn(Balance);
+  Write("Total  interest is : ");
+  WriteLn(IntSum);
+  END (* Loan *)
+        

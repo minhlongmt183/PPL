@@ -1,0 +1,8 @@
+Procedure xix(c: real) ;
+                   var x:real ;
+                   BEgin
+                    whILe(a<>1) do BEgin
+                        while(1) do x:=1;
+                    EnD
+                   EnD
+                   

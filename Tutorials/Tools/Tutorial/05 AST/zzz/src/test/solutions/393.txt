@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xxx),[],BoolType,[VarDecl(Id(Flag),BoolType),VarDecl(Id(i),IntType)],[AssignStmt(Id(Flag),BooleanLiteral(True)),For(Id(i)IntLiteral(1),Id(N),True,[If(BinaryOp(<>,ArrayCell(Id(A),Id(i)),ArrayCell(Id(A),BinaryOp(+,BinaryOp(-,Id(N),Id(i)),IntLiteral(1)))),[AssignStmt(Id(Flag),BooleanLiteral(False))],[])]),Return(Some(Id(flag)))])])

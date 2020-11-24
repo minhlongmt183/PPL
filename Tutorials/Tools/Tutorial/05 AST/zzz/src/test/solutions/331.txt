@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),FloatType)],FloatType,[VarDecl(Id(x),FloatType)],[If(BooleanLiteral(True),[AssignStmt(Id(a),Id(b))],[])])])

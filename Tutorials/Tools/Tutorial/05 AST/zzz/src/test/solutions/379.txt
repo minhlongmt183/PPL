@@ -1,0 +1,1 @@
+Program([VarDecl(Id(i),IntType),FuncDecl(Id(xixinh),[],VoidType(),[VarDecl(Id(xixinh),IntType)],[AssignStmt(Id(xixinh),CallExpr(Id(f),[])),CallStmt(Id(putIntLn),[Id(xixinh)]),With([VarDecl(Id(f),IntType)],[AssignStmt(Id(xixinh),IntLiteral(100))]),CallStmt(Id(xxx),[Id(xixinh)])]),VarDecl(Id(g),FloatType),FuncDecl(Id(xxx),[],IntType,[],[Return(None)])])

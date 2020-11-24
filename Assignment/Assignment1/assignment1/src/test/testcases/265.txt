@@ -1,0 +1,11 @@
+
+        Function: foo
+        Parameter: a[5], b
+        Body:
+            Do
+                Var: x = 1;
+                For (x = 1; x < 10, 1)
+                EndFor.
+            While (foo) EndDo.
+        EndBody.
+        

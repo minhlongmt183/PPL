@@ -1,0 +1,7 @@
+
+        var x : array[-10 .. 5] of boolEaN;
+        function xxx():integER;
+        BEgin 
+        EnD
+        var a : ReAL;
+        

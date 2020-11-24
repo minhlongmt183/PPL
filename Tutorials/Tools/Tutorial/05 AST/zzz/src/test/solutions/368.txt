@@ -1,0 +1,1 @@
+Program([VarDecl(Id(S),StringType),VarDecl(Id(error),IntType),VarDecl(Id(R),FloatType),FuncDecl(Id(main),[],VoidType(),[],[AssignStmt(Id(S),StringLiteral(-0.563)),CallStmt(Id(Val),[Id(S),Id(R),Id(error)]),If(BinaryOp(>,Id(error),IntLiteral(0)),[CallStmt(Id(Write),[StringLiteral(Error in conversion.)])],[CallStmt(Id(Write),[Id(R)])])])])

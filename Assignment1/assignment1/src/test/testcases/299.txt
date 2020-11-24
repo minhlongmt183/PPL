@@ -1,4 +1,0 @@
-Function:
-        Parameter: n
-        Body: 
-        EndBody.

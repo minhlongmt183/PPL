@@ -1,0 +1,11 @@
+
+        Function: main
+        Body:
+            Var: i[5]={1,2,3,4};
+            Var: j = 0;
+            For(j = 0., foo1() * i[23] == 2, "writeSomething") Do
+                print(i);
+            EndFor.  
+            Return 0;
+        EndBody.
+        

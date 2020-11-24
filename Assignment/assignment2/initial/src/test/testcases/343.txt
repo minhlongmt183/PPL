@@ -1,0 +1,14 @@
+
+        Function: main
+        Body:
+            Do
+            If x == 5 Then
+                printLn();
+            ElseIf x == 2 Then
+                readLn();
+            EndIf.
+            x= x + 1;
+        While (1)
+        EndDo.
+        EndBody.
+        

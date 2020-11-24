@@ -1,0 +1,8 @@
+
+                Procedure xixinh() ;
+                BEgin
+                 if a=b then if c = d then e := f;
+                 else i := 1;
+                 
+                EnD
+                

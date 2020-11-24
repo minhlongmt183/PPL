@@ -1,0 +1,7 @@
+
+        Function: main
+        Body:
+            Var: x = 2;
+            x = x =/= 12 * 412 - 4 +. -. -. -. -. "asd" + 123;
+        EndBody.
+        

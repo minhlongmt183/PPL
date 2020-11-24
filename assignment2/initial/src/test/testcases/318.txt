@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n 
-        Body: 
-            n = (9 + 2\2);
-        EndBody.

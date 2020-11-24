@@ -1,7 +1,0 @@
- 
-        Function: foo 
-        Parameter: n 
-        Body: 
-            c = a >= 5; 
-        EndBody.
-        

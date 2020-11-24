@@ -1,8 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            Do
-                x= x+1;
-            While x>1 
-            EndDo.
-        EndBody.

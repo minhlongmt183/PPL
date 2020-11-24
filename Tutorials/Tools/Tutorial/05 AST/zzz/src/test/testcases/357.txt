@@ -1,0 +1,6 @@
+function xix(c: real): integer;
+                   BEgin
+                    xix(1,a<>1,a[1]);
+                    return 1;
+                   EnD
+                   

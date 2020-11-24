@@ -1,0 +1,10 @@
+
+                Function xxx (  N :Integer) : Boolean;
+                Var Flag : Boolean;
+                 i :Integer;
+                BEgin
+                 begin
+                 EnD
+                 return Flag;
+                EnD
+                

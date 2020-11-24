@@ -1,0 +1,23 @@
+
+var
+   a: integer;
+
+procedure main();
+begin
+   a := 10;
+   
+   while not ( a = 20 ) do
+   begin
+      if( a = 15) then
+      
+      begin
+         (* skip the iteration *)
+         a := a + 1;
+         continue;
+      end
+      
+      writeln("value of a: ", a);
+      a := a+1;
+   end
+end
+        

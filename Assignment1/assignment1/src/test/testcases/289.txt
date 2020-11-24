@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            array[12]={a,b,c};
-        EndBody.

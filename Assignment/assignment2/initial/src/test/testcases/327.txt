@@ -1,0 +1,7 @@
+
+        Function: main
+        Body:
+            Var: x = {121 , 8374598, foo1, foo2};
+            Return 0;
+        EndBody.
+        

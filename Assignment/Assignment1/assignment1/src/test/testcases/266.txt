@@ -1,0 +1,10 @@
+
+        Function: fo
+        Parameter: a[5], b
+        Body:
+            Elseif Then
+                x = 10;
+                y = x * 10 - y + 10;
+            EndIf.
+        EndBody.
+        

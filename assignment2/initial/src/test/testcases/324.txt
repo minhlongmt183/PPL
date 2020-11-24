@@ -1,8 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-        For (i = 6*9,True, i-1) Do
-            Var:x=5;
-            a=3;
-        EndFor.
-        EndBody.

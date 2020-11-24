@@ -1,0 +1,33 @@
+
+  VAR First,  Second, Left, Right: BOOLEAN;
+  PROCEDURE  WriteBool(Val: BOOLEAN);
+  BEGIN
+  IF Val THEN
+  Write("TRUE ");
+  ELSE
+  Write("FALSE ");
+  END { WriteBool  }
+  PROCEDURE Main();
+  BEGIN
+  { Write Header }
+  WriteLn("Proof  of DeMorgan theorem ");
+  WriteLn();
+  WriteLn("First  Second Left Right ");
+  WriteLn("-----  ------ ----- ----- ");
+  { Loop through  all truth value combinations }
+  FOR First :=  FALSE TO TRUE DO
+  FOR Second :=  FALSE TO TRUE DO BEGIN
+  { Write out  Input values of First, Second }
+  WriteBool(First);
+  WriteBool(Second);
+  { Separate Input  values from the output }
+  Write(" ");
+  Left := (NOT  First) AND (NOT Second);
+  Right := NOT(First OR Second);
+  { Write out the  new values of Left, Right }
+  WriteBool(Left);
+  WriteBool(Right);
+  WriteLn();
+  END { Inner FOR  }
+  END { TruthTable  }
+        

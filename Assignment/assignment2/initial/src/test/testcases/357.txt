@@ -1,0 +1,9 @@
+
+        Function: main
+        Body:
+            arr = 1234 * a \ b -.--.- d +. 12.e-123;
+            While (print(arr[1]) == 1) Do
+                Continue;
+            EndWhile.
+        EndBody.
+        

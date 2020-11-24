@@ -1,0 +1,9 @@
+
+                function power(x:integer):integer;
+                BEgin
+                if x = 0 then
+                 return 1;
+                else
+                 return x*power(x-1);
+                EnD
+                

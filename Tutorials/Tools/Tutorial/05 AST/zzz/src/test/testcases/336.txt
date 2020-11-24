@@ -1,0 +1,11 @@
+Procedure xix(c: real) ;
+                   var x:real ;
+                   BEgin
+                    if(a>1) then BEgin
+                        a:=1 ;
+                        if(1=1) then a:= b[1];
+                        else b:=a[1]:= 1;
+                    EnD
+                    return sfdsf;
+                    EnD
+                    

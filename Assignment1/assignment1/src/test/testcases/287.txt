@@ -1,6 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            a[123]={};
-            b[1]={{{}}};
-        EndBody.

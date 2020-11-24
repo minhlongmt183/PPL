@@ -1,0 +1,14 @@
+
+        Function: fibo
+        Parameter: a[100], n
+        Body:
+            Return a[fibo(n)];   
+        EndBody.
+        Function: main
+        Body:
+            Var: x;
+            print(fibo({1,2,3,4,5,121,2143,13,6145,13512}, 6));
+            x = 1423;
+            Return 0;
+        EndBody.
+        

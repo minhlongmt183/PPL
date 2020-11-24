@@ -1,0 +1,7 @@
+Procedure xix(c: real) ;
+                   BEgin
+                    with a : integer ;
+                         do
+                    d := c [a] + b ;
+                   EnD
+                   

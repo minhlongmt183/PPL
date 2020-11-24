@@ -1,0 +1,12 @@
+
+        Function: main
+        Body:
+            Var: x = 10;
+            While x < 100 Do
+                print("string, hala madrid");
+            EndWhile.
+            If x == 10 Then
+            ElseIf x < 1 Then EndIf.
+            Var: kk = 12;
+        EndBody.
+        

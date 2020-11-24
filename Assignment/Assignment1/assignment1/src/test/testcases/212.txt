@@ -1,0 +1,11 @@
+
+        Function: main
+        Parameter: k
+        Body:
+            Var: i = 10, k[10][2] = {{}, {}};
+            Do
+                Break;
+            While i <= 10 EndDo.
+            Return 0;
+        EndBody.
+        

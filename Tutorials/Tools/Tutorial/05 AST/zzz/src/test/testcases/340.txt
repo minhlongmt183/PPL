@@ -1,0 +1,8 @@
+Procedure xix(c: real) ;
+                   BEgin
+                    whILe(a<>1) do BEgin
+                        while(1) do x:=1;
+                        if(a=1) then BEgin EnD
+                    EnD
+                   EnD
+                   

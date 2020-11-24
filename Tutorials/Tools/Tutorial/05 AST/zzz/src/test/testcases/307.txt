@@ -1,0 +1,5 @@
+var a: array [0 .. 10] of rEal; 
+        var b: array [-10 .. -10] of sTRing;
+        var c: array [-10 .. 10] of bOOlean;
+        var d: array [0 .. -10] of inteGER;
+              

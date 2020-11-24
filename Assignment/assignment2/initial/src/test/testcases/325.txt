@@ -1,0 +1,13 @@
+
+        Var: a, b= 1, c = 2;
+        Function: helloFunc
+        Body:
+            Var: hello_msg = "H3ll0 W0rld";
+            Return hello_msg;
+        EndBody.
+        Function: main
+        Body:
+            print(helloFunc());
+            Return;  
+        EndBody.
+        

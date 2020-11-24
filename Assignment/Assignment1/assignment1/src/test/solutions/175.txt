@@ -1,0 +1,1 @@
+Function,:,fibo,Parameter,:,n,Body,:,If,(,n,<,0,),Then,Return,-,1,;,ElseIf,(,n,==,0,||,n,==,1,),Then,Return,1,;,Else,Return,fibo,(,n,-,1,),+,fibo,(,n,-,2,),;,EndIf,.,EndBody,.,<EOF>

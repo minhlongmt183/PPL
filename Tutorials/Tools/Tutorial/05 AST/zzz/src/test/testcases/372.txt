@@ -1,0 +1,18 @@
+
+Procedure DrawLine(); 
+{This procedure helps me to avoid the rewriting the for loops}
+Var Counter : Integer;
+Begin
+	textcolor(green);
+	For Counter := 1 to 10 do
+	Begin 
+		Write(chr(196)); 
+	End
+End
+
+Procedure Main();
+Begin
+	
+	Readkey();
+End
+        

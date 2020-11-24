@@ -1,0 +1,1 @@
+Program([VarDecl(Id(S),StringType),VarDecl(Id(i),IntType),FuncDecl(Id(main),[],VoidType(),[],[AssignStmt(Id(S),StringLiteral(Hey! Xi Xinh Dep )),For(Id(i)IntLiteral(1),CallExpr(Id(length),[Id(S)]),True,[AssignStmt(ArrayCell(Id(S),Id(i)),CallExpr(Id(UpCase),[ArrayCell(Id(S),Id(i))]))]),CallStmt(Id(Write),[Id(S)])])])

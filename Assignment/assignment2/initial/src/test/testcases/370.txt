@@ -1,0 +1,9 @@
+
+        Function: main
+        Body:
+            For(i=0, i < n, 2) Do
+                foo();
+            EndFor.
+            Return 0;
+        EndBody.
+        

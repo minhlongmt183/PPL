@@ -1,9 +1,0 @@
- Function: testCallStatement
-                        Parameter: arg
-                        Body:
-                            printLn();
-                            print(arg);
-                            printStrLn(arg);
-                            read();
-                        EndBody.
-        

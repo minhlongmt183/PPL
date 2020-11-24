@@ -1,0 +1,1 @@
+Program([VarDecl(Id(quit),BoolType),VarDecl(Id(a),StringType),FuncDecl(Id(main),[],VoidType(),[],[While(UnaryOp(NOT,BinaryOp(=,Id(quit),BooleanLiteral(True))),[CallStmt(Id(Writeln),[StringLiteral(Type \"\"exit\"\" to quit:)]),CallStmt(Id(Readln),[Id(a)]),If(BinaryOp(=,Id(a),StringLiteral(exit)),[AssignStmt(Id(quit),BooleanLiteral(True))],[])])])])

@@ -1,0 +1,8 @@
+
+        Parameter: a[5], b
+        Function: foo
+        Body:
+            a = {12, 4} * "ad" + 14;
+            b = ---asd + 2144 + 4.a;
+        EndBody.
+        

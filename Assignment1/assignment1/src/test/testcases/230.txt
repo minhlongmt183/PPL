@@ -1,4 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: ** Xin chao**
-        EndBody.

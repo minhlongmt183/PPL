@@ -1,0 +1,10 @@
+
+                Procedure test1() ;
+                BEgin
+	               if a=b then
+	               BEgin
+		                 b := c ;
+		                 if(e <> f) then xix(a,c) ;
+	               EnD
+                EnD
+                

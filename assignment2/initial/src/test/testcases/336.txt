@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            a= (a==b)!= c +3;
-        EndBody.

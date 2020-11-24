@@ -1,0 +1,36 @@
+
+  { An Extended  Payroll program
+  }
+  { Selection  nested in Else branch of outer
+  Selection }
+
+  VAR Hours, Pay: INTEGER;
+  PROCEDURE main();
+  BEGIN
+  RegularRate := 10;
+  ExtraRate := 15;
+  DoubleRate := 20;
+  BaseHours := 40;
+  ExtraHours := 20;
+  DoubleTimeStart  := BaseHours + ExtraHours;
+  BasePay :=  RegularRate * BaseHours;
+  ExtraPay :=  ExtraRate * ExtraHours;
+  Write("Enter  hours");
+  Read(Hours);
+  WriteLn();
+  IF Hours >  DoubleTimeStart THEN
+  Pay := BasePay +  ExtraPay +
+  DoubleRate *  (Hours -
+  DoubleTimeStart);
+  ELSE
+  IF Hours <=  BaseHours THEN
+  Pay :=  RegularRate * Hours;
+  ELSE
+  Pay := BasePay +
+  ExtraRate *  (Hours -
+  BaseHours);
+  Write("The gross  pay is ");
+  Write(Pay);
+  WriteLn();
+  END {  ExtendedPay }
+        

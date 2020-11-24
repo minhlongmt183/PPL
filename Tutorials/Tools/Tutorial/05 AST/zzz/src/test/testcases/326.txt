@@ -1,0 +1,8 @@
+Procedure xix(a, b: integer ; c: boolean) ;
+                  var x,y: real ;
+                  BEgin
+                    a := 1;
+                    b := a[12] ;
+                  EnD
+                  vaR x: integer;
+                  

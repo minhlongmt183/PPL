@@ -1,0 +1,8 @@
+
+        Var: x;
+        Function: main
+        Body:
+            Var: v;
+            v = If x == 1 ElseIf x == 2 EndIf;
+        EndBody.
+        

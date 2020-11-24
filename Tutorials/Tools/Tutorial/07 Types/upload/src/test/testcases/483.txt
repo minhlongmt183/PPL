@@ -1,0 +1,37 @@
+
+function conbocuoi1(conbocuoi:integer):integer;
+begin
+    return 1;
+end
+
+function conbocuoi2(conbocuoi:real):real;
+begin
+    return 1.0;
+end
+
+function conbocuoi3(conbocuoi:string):string;
+begin
+    return "conbocuoi";
+end
+
+function conbocuoi4(conbocuoi:array[1 .. 100] of integer):array[1 .. 100] of integer;
+begin
+    return conbocuoi;
+end
+
+function conbocuoi5(conbocuoi:boolean):boolean;
+begin
+    return True;
+end
+
+procedure main(); 
+var c1:integer;
+    c2:real;
+    c5:boolean;
+    c3:string;
+    c4:array[1 .. 100] of integer;
+begin
+    c1 := conbocuoi4(c4)[10];
+    c2 := conbocuoi3(c4);
+    return;
+end

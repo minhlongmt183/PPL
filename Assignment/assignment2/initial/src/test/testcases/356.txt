@@ -1,0 +1,12 @@
+
+        Function: arry
+        Body:
+        Var: x = 10;
+            While x > 1 Do
+                inp = a[fsfsg] + 20 *. 124;
+                If inp == 123 Then 
+                    Break;
+                EndIf.
+            EndWhile.
+        EndBody.
+        

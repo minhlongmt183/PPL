@@ -1,0 +1,5 @@
+FUNcTION xix(a, b: integer ; c: real): integer ;
+                  var x,y: real ;
+                  BEgin
+                  EnD                  
+                  

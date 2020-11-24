@@ -1,0 +1,26 @@
+
+  VAR Pennies:  INTEGER;
+  Tendered, Cost,  Remainder: REAL;
+  PROCEDURE Main();
+  BEGIN
+  (* Input  necessary information *)
+  Write("Enter cost  of item: ");
+  Read(Cost);
+  Write("Enter  amount tendered: ");
+  Read(Tendered);
+  (* Compute the  change in pennies *)
+  Remainder :=  Tendered - Cost;
+  Pennies := 0;
+  WHILE Remainder  > 0 DO BEGIN
+  Remainder :=  Remainder - 0.01;
+  Pennies :=  Pennies + 1;
+  END (* WHILE *)
+  (* Output all  required Results *)
+  Write("Cost is:  ");
+  Write(Cost);
+  Write(" Amount  tendered is: ");
+  Write(Tendered);
+  Write(" Change  is: ");
+  WriteLn(Pennies);
+  END (*  BadChanger *)
+        

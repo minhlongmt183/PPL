@@ -1,0 +1,10 @@
+
+        Function: main
+        Body:
+            Var: s = 0;
+            For (i = 0, i < 10, f(2)) Do
+                s += i *. 2;
+            EndFor.
+            Return 0;
+        EndBody.
+        

@@ -1,0 +1,6 @@
+
+        procedure  xxx();
+        BEgin 
+        EnD
+        var a : ReAL;
+        

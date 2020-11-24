@@ -1,0 +1,7 @@
+
+        Function: foo
+        Parameter: a[10], b
+        Body:
+            f[3] = 5 == 12 ;
+        EndBody.
+        

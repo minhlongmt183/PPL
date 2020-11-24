@@ -1,0 +1,12 @@
+
+Var 
+	S : String;
+
+Procedure main();
+Begin
+	S := "Hey! How are you?";
+	Insert(" Max", S, 4);
+	Write(S);
+  { "Hey Max! How are you?" }
+End
+        

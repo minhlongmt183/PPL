@@ -1,0 +1,9 @@
+
+        Var: x;
+        Do
+            If x == 1
+            ElseIf x == 2
+            EndIf.
+        While x == 2
+        EndDo.
+        

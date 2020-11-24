@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[],VoidType(),[],[AssignStmt(Id(a),StringLiteral(onggia))])])

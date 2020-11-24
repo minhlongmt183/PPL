@@ -1,0 +1,6 @@
+
+        Function: main
+        Body:
+            x = 9 == 20 == 6;
+        EndBody.
+        

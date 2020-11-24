@@ -1,0 +1,7 @@
+function xix(c: real): integer;
+                   BEgin
+                    test(brown);
+                	ClrScr(); 
+                    return func(a(1,2));
+                   EnD
+                   

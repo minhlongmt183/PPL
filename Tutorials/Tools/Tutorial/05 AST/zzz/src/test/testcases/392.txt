@@ -1,0 +1,13 @@
+
+                Function xinh () : Boolean;
+                begin                
+                If d<0 then
+                Writeln("Phuong trinh vo nghiem"); Else
+                Begin
+                x1:= (-b+sqrt(d))/(2*a);
+                x2:= (-b-sqrt(d))/(2*a);
+                Write("Phuong trinh co hai nghiem: ");
+                Writeln(" x1=", x2);
+                End
+                end
+                

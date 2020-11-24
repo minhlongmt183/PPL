@@ -1,0 +1,6 @@
+
+        Function: main
+        Body:
+            x = f[20] + 1432;
+        EndBody.
+        

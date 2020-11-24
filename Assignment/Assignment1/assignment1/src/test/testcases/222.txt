@@ -1,0 +1,13 @@
+
+        Function: main
+        Body:
+            Var: i;
+            If i == 10 Then
+            Else
+                print(i);
+            ElseIf i == 2 Then
+                Break;
+            EndIf.
+            Return 0;
+        EndBody.
+        

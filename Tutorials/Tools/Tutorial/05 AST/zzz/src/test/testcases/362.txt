@@ -1,0 +1,10 @@
+
+Var 
+	S : String;
+
+Procedure main();
+Begin
+	a := b:=c:=6 and 4;
+    writre (a);
+End
+        

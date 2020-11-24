@@ -1,0 +1,17 @@
+
+        Function: main
+        Body:
+            Do
+                print_Numb3r(12);
+                While x Do
+                    Var: x;
+                    If x == 5 Then
+                        printLn();
+                    ElseIf x == 2 Then
+                        readLn();
+                    EndIf.
+                    x= x + 1;
+                EndWhile.
+            While True EndDo.
+        EndBody.
+        

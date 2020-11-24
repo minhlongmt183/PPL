@@ -1,0 +1,9 @@
+
+PROCEDURE main(); 
+  BEGIN (* To De-Militarize Time *)
+  Read(MilTime);
+  Hours := MilTime  DIV 100;
+  Minutes :=  MilTime MOD 100;
+  Write(Hours,  Minutes);
+  END (* of  De-Militarizing Time *)
+        

@@ -1,0 +1,12 @@
+
+        Var: a, b, c = 2;
+        Function: func
+        Body:
+            Return "Hello World" 1967;
+        EndBody.
+        Function: main
+        Body:
+            print(func());
+            Return;  
+        EndBody.
+        

@@ -1,0 +1,10 @@
+
+Var
+	UFile : String; { or it could be of "file" type}
+
+Procedure Main();
+Begin
+	Assign(UFile, "C:\\ADDTEXT.TXT");
+	Erase(UFile); 
+End
+        

@@ -1,0 +1,7 @@
+
+                Procedure xixinh() ;
+                BEgin
+                 a[b[c]] := d;
+                 
+                EnD
+                

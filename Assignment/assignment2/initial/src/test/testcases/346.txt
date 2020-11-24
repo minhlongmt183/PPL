@@ -1,0 +1,8 @@
+
+        Function: main
+        Body:
+            Do
+                Var: arr[1134][4] = False;
+            While True EndDo.
+        EndBody.
+        

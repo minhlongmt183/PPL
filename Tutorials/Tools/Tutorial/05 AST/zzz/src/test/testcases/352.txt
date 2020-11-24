@@ -1,0 +1,5 @@
+Procedure xix(c: real);
+                   BEgin
+                    while (1) do reTuRn ;
+                   EnD
+                   

@@ -1,0 +1,9 @@
+
+                Procedure test2() ;
+                BEgin
+	                if a=b then if faLSe then while (true) do
+                     BEgin
+                     EnD
+                    else c := 1;
+                EnD
+                

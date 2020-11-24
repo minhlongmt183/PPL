@@ -1,0 +1,9 @@
+
+        Function: main
+        Body:
+            While (0o12) Do
+                Var: x = 15;
+                print("Error on line 4 col 12: While");
+            EndWhile.
+        EndBody.
+        

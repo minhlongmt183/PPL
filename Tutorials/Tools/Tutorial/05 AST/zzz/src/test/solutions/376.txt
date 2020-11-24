@@ -1,0 +1,1 @@
+Program([VarDecl(Id(UFile),StringType),FuncDecl(Id(main),[],VoidType(),[],[CallStmt(Id(Assign),[Id(UFile)]),CallStmt(Id(ReWrite),[Id(UFile)]),CallStmt(Id(Writeln),[Id(UFile),BinaryOp(+,StringLiteral(How many sentences ),StringLiteral(are present in this file?))]),CallStmt(Id(Close),[Id(UFile)])])])

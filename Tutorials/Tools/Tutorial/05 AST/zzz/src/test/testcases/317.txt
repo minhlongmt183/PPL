@@ -1,0 +1,7 @@
+
+        Procedure xixinh () ;
+        BEgin
+            thatxinh(m);
+            a[1] := 3;
+        EnD
+        

@@ -1,0 +1,21 @@
+
+var conbocuoi4:integer;
+    conbocuoi5:boolean;
+
+procedure conbocuoi6(conbocuoi8:array [1 .. 100] of integer);
+var conbocuoi, conbocuoi7:integer;
+    conbocuoi3:boolean;
+begin
+
+    return;
+end
+
+procedure main(); 
+var conbocuoi:array[1 .. 100] of integer;
+    conbocuoi2:array[1 .. 100] of real;
+    conbocuoi1:boolean;
+begin
+    conbocuoi6(conbocuoi);
+    conbocuoi6(conbocuoi2);
+    return;
+end

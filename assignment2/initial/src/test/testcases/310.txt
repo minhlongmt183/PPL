@@ -1,6 +1,0 @@
- Function: foo
-                        Parameter: a
-                        Body:
-                        x = 3;
-                        EndBody.
-                

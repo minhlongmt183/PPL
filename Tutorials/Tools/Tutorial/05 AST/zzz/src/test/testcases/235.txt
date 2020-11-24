@@ -1,0 +1,12 @@
+
+Var 
+	S : String;
+	i : Real;
+
+Procedure main();
+Begin
+	i := -0.563; 
+	Str(i, S);
+	Write(S); 
+End
+        

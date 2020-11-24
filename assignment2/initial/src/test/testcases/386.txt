@@ -1,6 +1,0 @@
- 
-            Function: test 
-            Body:
-                a[foo(x)+12] = ("String" + 12.e3) *. 0x123;
-            EndBody.
-            

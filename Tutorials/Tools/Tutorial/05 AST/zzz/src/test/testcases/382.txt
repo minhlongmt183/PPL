@@ -1,0 +1,10 @@
+
+                Var name: striNG;
+                Procedure xixinh();
+                BEgin
+	               write("Nhap :");
+	               readln(name);
+	               writeln("Ten day du cua ban la : ",name);
+	               readln();
+                EnD
+                

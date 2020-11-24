@@ -1,0 +1,5 @@
+function xix(c: real): integer;
+                   BEgin
+                    xix(3,xix(xix1(xix(2,a+1))));
+                    return func(a(1,2));
+                   EnD

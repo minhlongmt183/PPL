@@ -1,0 +1,1 @@
+Program([VarDecl(Id(xi1),IntType),VarDecl(Id(xi2),IntType),VarDecl(Id(Sum),IntType),FuncDecl(Id(concaheo),[VarDecl(Id(a),FloatType),VarDecl(Id(c),FloatType)],VoidType(),[],[AssignStmt(Id(Sum),BinaryOp(+,Id(xi1),Id(xi2))),CallStmt(Id(Write),[Id(Sum)]),CallStmt(Id(Readln),[])])])

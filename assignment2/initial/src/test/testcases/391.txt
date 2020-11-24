@@ -1,9 +1,0 @@
- 
-            Function: sum
-            Parameter: lst
-            Body:
-                For (i = 0, i<len(sum), i+1) Do
-                    rs = rs + sum[i];
-                EndFor.
-            EndBody.
-            

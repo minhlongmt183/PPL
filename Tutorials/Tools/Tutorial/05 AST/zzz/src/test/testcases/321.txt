@@ -1,0 +1,7 @@
+
+        var a : ReAL;
+        function  xxx():integer;
+        BEgin 
+            
+        EnD
+        

@@ -1,0 +1,14 @@
+
+Var quit : Boolean;
+    a    : String;
+Procedure main();
+Begin
+	While NOT (quit = True) Do
+    Begin
+		Writeln("Type \"\"exit\"\" to quit:");
+		Readln(a);
+		If a = "exit" Then 
+			quit := True;
+    End
+End
+        

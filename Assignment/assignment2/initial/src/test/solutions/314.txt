@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][If(BinaryOp(==,Id(n),IntLiteral(0)),[],[Return(IntLiteral(1))])ElseIf(BinaryOp(==,Id(n),IntLiteral(1)),[],[Return(IntLiteral(1))])Else([],[Return(BinaryOp(+,CallExpr(Id(fibo),[BinaryOp(-,Id(n),IntLiteral(1))]),CallExpr(Id(fibo),[BinaryOp(-,Id(n),IntLiteral(2))])))])]))])

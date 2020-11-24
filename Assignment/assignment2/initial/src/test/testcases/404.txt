@@ -1,0 +1,12 @@
+Function: octalToDecimal
+		Parameter: octalNumber
+		Body:
+		Var: decimalNumber = 0, i = 0, rem;
+		While (octalNumber != 0) Do
+			rem = octalNumber % 10;
+			octalNumber =octalNumber \ 10;
+			decimalNumber =decimalNumber  + rem * pow(8,i);
+			i=i+1;
+		EndWhile.
+	Return decimalNumber;
+	EndBody.

@@ -1,0 +1,15 @@
+
+                Procedure xixinh() ;
+                var a: array[-100 .. 100] of integer;
+                 
+                BEgin
+                    for i := 0 to n - 2 do
+                        for j:= i+1 to n-1 do
+                            if(a[i]>a[j]) then BEgin
+                                temp := a[i];
+                                a[i] := a[j];
+                                a[j] := temp;
+                            EnD
+                    print(a);
+                EnD
+                

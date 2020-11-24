@@ -1,0 +1,55 @@
+
+Var
+	myStack : Array[1 .. 100] of Integer;
+	topPointer : Integer;
+
+
+Procedure InitStack();
+Begin
+	topPointer := 0;
+End
+//We now implemement the IsEmpty() and IsFull() functions.
+
+Function IsEmpty() : Boolean;
+Begin
+	IsEmpty := False;
+	If (topPointer = 0) Then
+		IsEmpty := true;
+End
+
+Function IsFull() : Boolean;
+Begin
+	IsFull := False;
+	If ((topPointer + 1) = STACK_SIZE) Then
+		IsFull := True;
+End
+//Here are the implementations of the Pop() and Push() functions and making use of the functions that we have just implemented.
+
+Function Pop() : Integer;
+
+Begin
+	Pop := nil;
+
+	If not IsEmpty Then
+	Begin
+		Pop := myStack[topPointer];
+		topPointer := topPointer - 1; 
+	End
+End
+
+Procedure Push(item : Integer);
+Begin
+	If not IsFull Then
+	Begin
+		myStack[topPointer+1] := item;
+		topPointer := topPointer + 1;
+	End
+End
+
+//Finally, we implement the utility function GetSize(). Although one can access the current size of the stack using the global variable topPointer, it is of good practice to make use of functions instead of global variables.
+
+Function GetSize() : Integer;
+Begin
+	GetSize := topPointer;
+End
+        

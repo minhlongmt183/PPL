@@ -1,0 +1,11 @@
+
+        Function: foo
+        Parameter: arr[10], n
+        Body:
+            Do
+                Var: x = 1;
+                For (x = 1, x < n, 0x11) Do
+                EndFor.
+            While (foo()) EndDo.
+        EndBody.
+        

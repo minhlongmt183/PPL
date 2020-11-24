@@ -1,0 +1,8 @@
+
+                Procedure file(n: integer);
+                BEgin
+                 Assign(f,fo);
+                  Rewrite(f);                 
+                 Close(f);
+                EnD
+                

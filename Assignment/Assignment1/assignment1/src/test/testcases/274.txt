@@ -1,0 +1,9 @@
+
+        ** import test **
+        ** test.test(f = 2) -> failure **
+        Function: foo
+        Parameter: a[5]["b" - 97]
+        Body:
+            a = {12, 4}["b"]
+        EndBody.
+        

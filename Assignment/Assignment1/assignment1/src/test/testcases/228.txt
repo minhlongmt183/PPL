@@ -1,0 +1,12 @@
+
+        Function: find_max
+        Parameter: a[10]
+        Body:
+            Return a[random(0, 10, False)];   
+        EndBody.
+        Function: main
+        Body:
+            print(find_max({1,2,3,4,5,6,7,8,9,10}));
+            Return 0;
+        EndBody.
+        

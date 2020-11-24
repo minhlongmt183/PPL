@@ -1,0 +1,14 @@
+
+procedure main(); 
+var c1:integer;
+    c2:real;
+    c3:boolean;
+    c4:string;
+begin
+    c1 := c1 + c1;
+    c2 := c1 + c2;
+    c2 := c1 + c1;
+    c2 := c2 + c2;
+    c3 := c1 and then c4;
+    return;
+end

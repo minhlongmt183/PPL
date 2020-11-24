@@ -1,0 +1,52 @@
+
+Var
+	SEL : Integer;
+	YN : String;
+procedure main();
+Begin
+	Writeln("[1]. PLAY GAME");
+	WRITELN("[2]. LOAD GAME");
+	WRITELN("[3]. MULTIPLAYER");
+	WRITELN("[4]. EXIT GAME");
+	Writeln("note: Do not press anything except");
+	Writeln("numbers; otherwise an error occurs!");
+	Readln(SEL);
+	
+	If SEL = 1 Then
+	Begin
+		Writeln("You will soon be able to create");
+		Writeln("games using Pascal Programming :-)");
+		Delay(2000);
+		Goto(Ret);
+	end
+
+	If SEL = 2 Then
+	Begin
+		Writeln("Ahhh... no saved games");
+		Delay(2000);
+		Goto(Ret);
+	end
+
+	If SEL = 3 Then
+	Begin
+		Writeln("networking or 2 players?");
+		Delay(2000);
+		Goto(Ret);
+	end
+
+	If SEL = 4 Then
+	Begin
+		Writeln("Are you sure you want to Exit?");
+		YN := Readkey;
+		If YN = "y" Then
+		Begin
+			Writeln("Good Bye...");
+			Delay(1000);
+			Halt(); {EXIT PROGRAM}
+		end
+
+		If YN = "n" Then
+			Goto(Ret);
+	end
+end
+        

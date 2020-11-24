@@ -1,0 +1,5 @@
+function xix(c: real): integer;
+                   BEgin
+                    xix(xix(1,2)[m+ n]);
+                    return xix2();
+                   EnD

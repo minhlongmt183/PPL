@@ -1,0 +1,31 @@
+
+        
+var conbocuoi4:integer;
+
+function conbocuoi3():integer;
+begin
+    return conbocuoi4();
+end
+
+function conbocuoi6():integer;
+begin
+    return 100;
+end
+
+procedure conbocuoi5();
+begin
+    return;
+end
+
+function conbocuoi5():integer;
+begin
+    return 100;
+end
+
+procedure main(); 
+var conbocuoi1:integer;
+    conbocuoi2:real;
+    conbocuoi2:string;
+begin
+    return;
+end

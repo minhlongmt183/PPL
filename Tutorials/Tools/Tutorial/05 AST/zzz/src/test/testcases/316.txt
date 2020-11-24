@@ -1,0 +1,6 @@
+
+        fUNcTion xinh (a, b:integer) : integer;
+        var a, b :integER;
+        BEgin
+        EnD
+        

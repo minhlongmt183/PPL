@@ -1,0 +1,13 @@
+
+         Function: main
+         Body:
+             Var: count = 0;
+             Var: x[23];
+             While True Do
+                 count = count + 1;
+                 x[icount] = count;
+                 print(count);
+             EndWhile.
+             Return 0;
+         EndBody.
+         

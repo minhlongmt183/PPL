@@ -1,0 +1,12 @@
+
+                Function xxx (): Boolean;
+                Var Flag:Boolean;
+                    i :Integer;
+                BEgin
+                 Flag:=True;
+                 For  i :=1 to N do
+                 If(A[i] <> A[N-i  +1]) Then
+                 Flag :=False;     
+                 return flag;
+                EnD
+                

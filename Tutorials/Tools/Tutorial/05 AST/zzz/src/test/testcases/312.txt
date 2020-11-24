@@ -1,0 +1,7 @@
+
+        var x : array[-10 .. 5] of boolEaN;
+        procedure  xxx();
+        BEgin 
+        EnD
+        var a : ReAL;
+        

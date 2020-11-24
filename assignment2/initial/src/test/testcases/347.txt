@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n, a[10]
-        Body: 
-        
-        EndBody.

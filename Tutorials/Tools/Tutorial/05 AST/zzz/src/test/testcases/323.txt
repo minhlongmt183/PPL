@@ -1,0 +1,6 @@
+Procedure xix(a, b: integer ; c: real) ;
+                  var x,y: real ;
+                  BEgin
+                    hi();
+                  EnD
+                  

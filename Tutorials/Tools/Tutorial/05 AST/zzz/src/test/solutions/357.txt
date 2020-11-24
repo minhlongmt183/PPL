@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),FloatType)],IntType,[],[CallStmt(Id(xix),[IntLiteral(1),BinaryOp(<>,Id(a),IntLiteral(1)),ArrayCell(Id(a),IntLiteral(1))]),Return(Some(IntLiteral(1)))])])

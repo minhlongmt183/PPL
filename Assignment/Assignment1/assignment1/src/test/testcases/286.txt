@@ -1,0 +1,6 @@
+
+        Function: main
+        Body:
+            class.class = class || False * 123 - 234 + 34 \ 123;
+        EndBody.
+        

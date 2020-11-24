@@ -1,0 +1,10 @@
+
+        Function: main
+        Body:
+            Var: i[0o65]={1,2,3,4};
+            Var: j = 0;
+            j = "3" + "1";
+            i[0] = foo(f1(0))[4][5];
+            Return 0;
+        EndBody.
+        

@@ -1,0 +1,1 @@
+Program([VarDecl(Id(S),StringType),FuncDecl(Id(main),[],VoidType(),[],[AssignStmt(Id(S),StringLiteral(Hey! Xi Xinh Dep )),CallStmt(Id(Write),[CallExpr(Id(UpCase),[Id(S)])])])])

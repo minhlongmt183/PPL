@@ -1,0 +1,15 @@
+
+Var n1, n2 : string;
+procedure main();
+Begin
+	Writeln("Enter two numbers: (\"\"0\"\" & \"\"0\"\" to exit)");
+	While not ((n1 = "0") AND (n2 = "0")) do
+    Begin
+		Write("No.1: ");
+		Readln(n1);
+		Write("No.2: ");
+		Readln(n2);
+		If (n1 = "0") AND (n2 = "0") Then Halt(0);
+    End
+End
+        

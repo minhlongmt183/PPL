@@ -1,0 +1,14 @@
+
+        Var: a, b, c = 10 + 2 * 4;
+        Function: main
+        Body:
+            Var: i = 0, arr[10];
+            c = arr[0];
+            For (i = 1, i < 10, 1) Do
+                If (c < arr[i]) Then
+                    c = arr[i];
+                EndIf.
+            EndFor.  
+            Return 0;
+        EndBody.
+        

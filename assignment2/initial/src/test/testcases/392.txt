@@ -1,7 +1,0 @@
-
-            Function:  test
-            Parameter: var,x
-            Body:
-                var = (x - 1)\2 && True;
-            EndBody.
-            

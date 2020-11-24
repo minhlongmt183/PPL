@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xixinh),[],VoidType(),[VarDecl(Id(a),IntType),VarDecl(Id(b),IntType)],[CallStmt(Id(Writeln),[StringLiteral([1]. PLAY GAME)]),CallStmt(Id(WRITELN),[StringLiteral([2]. LOAD GAME)]),CallStmt(Id(Readln),[Id(SEL)])])])

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo)[],([][CallStmt(Id(print),[StringLiteral(Hello)])])),FuncDecl(Id(main)[],([VarDecl(Id(j),IntLiteral(0))][Assign(Id(j),BinaryOp(+,StringLiteral(3),StringLiteral(1))),Return(IntLiteral(0))]))])

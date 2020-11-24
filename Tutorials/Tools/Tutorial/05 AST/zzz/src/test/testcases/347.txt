@@ -1,0 +1,9 @@
+Procedure xix(c: real);
+                   BEgin
+                    FOR i:=1 to m+ n do BEgin
+                        while i>1 do
+                            FOR i:=m+ n doWnTO 10 do
+                                while j>1 do x:=xix(10);
+                    EnD
+                   EnD
+                   

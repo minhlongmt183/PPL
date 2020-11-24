@@ -1,0 +1,6 @@
+function xix(c: real): integer;
+                   BEgin
+                    reTuRn;
+                    reTuRn;
+                   EnD
+                   

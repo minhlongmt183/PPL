@@ -1,0 +1,1 @@
+Program([VarDecl(Id(S1),StringType),VarDecl(Id(S2),StringType),FuncDecl(Id(main),[],VoidType(),[],[AssignStmt(Id(S1),StringLiteral(xi!)),AssignStmt(Id(S2),StringLiteral( Xi Xinh Dep )),CallStmt(Id(Write),[CallExpr(Id(Concat),[Id(S1),Id(S2)])])])])

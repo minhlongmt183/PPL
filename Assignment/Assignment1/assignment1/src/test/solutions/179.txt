@@ -1,0 +1,1 @@
+isTrue,=,False,;,If,(,isTrue,==,True,),number,=,0o12345,9,;,EndIf,.,<EOF>

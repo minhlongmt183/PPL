@@ -1,0 +1,16 @@
+
+Var 
+	S     : String;
+	error : Integer;
+	R     : Real;
+
+Procedure main();
+Begin
+	S := "-0.563"; 
+	Val(S, R, error);
+	If error > 0 Then
+  	Write("Error in conversion.");
+	Else
+		Write(R); 
+End
+        

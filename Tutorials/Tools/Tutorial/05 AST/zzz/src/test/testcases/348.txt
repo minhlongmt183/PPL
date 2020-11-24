@@ -1,0 +1,7 @@
+Procedure xix(c: real);
+                   BEgin
+                    FOR i:=1 to m + n do BEgin
+                        brEaK;
+                    EnD
+                   EnD
+                   

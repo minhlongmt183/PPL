@@ -1,0 +1,11 @@
+
+                Function hihi (N: real) :Integer;
+                Var i:Integer;
+                BEgin
+                 For i:=2 to N-1 do
+                  If(truE) then
+                    return 0;
+                  Else
+                    return 1;
+                EnD
+                

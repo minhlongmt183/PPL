@@ -1,0 +1,5 @@
+
+        For( i = 0, i < 100, i ++)
+            sum_of_square_root = i ** .5;
+        EndFor.
+        

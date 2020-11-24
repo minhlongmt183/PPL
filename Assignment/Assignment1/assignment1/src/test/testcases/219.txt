@@ -1,0 +1,11 @@
+
+        Function: main
+        Parameter: n = 10
+        Body:
+            Var: i;
+            For(i = 0, i < 10, 1) Do
+                Continue;
+            EndFor.
+            Return 0;
+        EndBody.
+        

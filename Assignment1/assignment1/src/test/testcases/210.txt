@@ -1,8 +1,0 @@
- 
-        Function: foo 
-        Parameter: n 
-        Body: 
-            c = a < 4;
-            c = !a; 
-        EndBody.
-        

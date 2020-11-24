@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(xix),[VarDecl(Id(c),FloatType)],StringType,[],[With([VarDecl(Id(c),IntType),VarDecl(Id(d),IntType),VarDecl(Id(c),ArrayType(1,2,FloatType))],[With([VarDecl(Id(a),IntType),VarDecl(Id(b),IntType)],[CallStmt(Id(xix2),[Id(a),Id(b),StringLiteral(anc)])])])])])

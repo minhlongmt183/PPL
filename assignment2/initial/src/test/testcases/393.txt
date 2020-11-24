@@ -1,7 +1,0 @@
-
-            Function: test 
-            Body:
-                Var: x = 10, a[10][12][0x12]; 
-                var = (x - 1)\2 && True;
-            EndBody.
-            

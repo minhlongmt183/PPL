@@ -1,0 +1,1 @@
+Program([VarDecl(Id(name),StringType),FuncDecl(Id(xixinh),[],VoidType(),[],[CallStmt(Id(write),[StringLiteral(Nhap :)]),CallStmt(Id(readln),[Id(name)]),CallStmt(Id(writeln),[StringLiteral(Ten day du cua ban la : ),Id(name)]),CallStmt(Id(readln),[])])])

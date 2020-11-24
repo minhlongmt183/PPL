@@ -1,7 +1,0 @@
-Function: test
-            Body:
-                foo(x+y,goo());
-                a= foo(x+y,goo());
-                b= goo(print(f)) + "String";
-                Return foo();
-            EndBody. 

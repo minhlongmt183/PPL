@@ -1,0 +1,8 @@
+
+        Function: main
+        Body:
+            For(counter = 0., foo() * a[23] == 2, "asd") Do
+                x = 213;
+            EndFor.
+        EndBody.
+        

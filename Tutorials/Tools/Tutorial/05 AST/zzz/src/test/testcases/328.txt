@@ -1,0 +1,7 @@
+Procedure xix(c: real) ;
+                   var x,y: real ;
+                   BEgin
+                    z := "dsfsd";
+                    c := a[12] ;
+                   EnD
+                   

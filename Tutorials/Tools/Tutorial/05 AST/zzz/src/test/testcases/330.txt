@@ -1,0 +1,6 @@
+function xix(c: real): real ;
+                   var x: integer ;
+                   BEgin
+                    a[m]  := a[n] :=  f(m)[3] := 1;
+                   EnD
+                   

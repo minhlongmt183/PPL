@@ -1,0 +1,7 @@
+
+        Function: foo
+        Parameter: a[5], b
+        Body:
+            c = "akf"[0] + x[{1,2, 4}];
+        EndBody.
+        

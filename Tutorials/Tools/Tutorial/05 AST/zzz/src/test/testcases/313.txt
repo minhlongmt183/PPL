@@ -1,0 +1,9 @@
+
+        Procedure xixinh () ;
+        var a, b :integER;
+        BEgin
+            Writeln("[1]. PLAY GAME");
+            WRITELN("[2]. LOAD GAME");
+            Readln(SEL);
+        EnD
+        

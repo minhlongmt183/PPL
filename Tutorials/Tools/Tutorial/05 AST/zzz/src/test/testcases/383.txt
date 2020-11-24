@@ -1,0 +1,9 @@
+
+                Var PD, Dname, Cmodel : striNG;
+                Procedure xixinh();
+                BEgin
+                	ClrScr(); 
+                	GotoXy(28,3);
+                	Readln();
+                EnD
+        

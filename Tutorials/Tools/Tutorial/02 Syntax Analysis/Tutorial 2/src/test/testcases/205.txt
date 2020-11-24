@@ -1,0 +1,20 @@
+
+                float fast_read()
+                {
+                    sync_with_stdio(false);
+                    tie(0);
+                }
+
+                int main()
+                {
+                    int a, b;
+                    int ans;
+                    ans = 1e18;
+                    int t;
+                    t = 1e18;
+                    fast_read();
+                    input(a, b);
+                    output(ans);
+                    return 0;
+                }
+                

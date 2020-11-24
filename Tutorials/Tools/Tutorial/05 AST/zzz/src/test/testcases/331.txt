@@ -1,0 +1,6 @@
+function xix(c: real): real ;
+                   var x:real ;
+                   BEgin
+                    if (true) then a:= b;
+                   EnD
+                   

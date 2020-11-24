@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main)[],([][While(IntLiteral(10),[VarDecl(Id(x),IntLiteral(15))],[CallStmt(Id(print),[StringLiteral(Error on line 4 col 12: While)])])]))])

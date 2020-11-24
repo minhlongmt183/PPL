@@ -1,0 +1,7 @@
+
+var
+age, weekdays : integer;
+taxrate, net_income: real;
+choice, isready: boolean;
+name, surname : string;
+        

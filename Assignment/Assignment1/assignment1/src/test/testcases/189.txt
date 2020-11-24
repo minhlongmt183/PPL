@@ -1,0 +1,4 @@
+
+        **call function**
+        foo(a + 7. *. .e-123 \. 2.231e+--4 + arr[.2 != 5.][funct(1)]);
+        

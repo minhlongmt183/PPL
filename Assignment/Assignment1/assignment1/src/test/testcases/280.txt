@@ -1,0 +1,6 @@
+
+        Function: main
+        Body:
+            print() = 1234 || False + 22222;
+        EndBody.
+        

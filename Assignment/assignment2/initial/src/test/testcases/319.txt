@@ -1,0 +1,7 @@
+
+        Function: foo
+        Parameter: a[10][34], b
+        Body:
+            c = f1(111**just comment**) * f(abcd);
+        EndBody.
+        

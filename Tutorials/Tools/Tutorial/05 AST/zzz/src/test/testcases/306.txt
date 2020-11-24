@@ -1,0 +1,5 @@
+var a, b:integer;
+        var a, b:boolean;
+            x, y :string ;
+        var r, q :real;
+              

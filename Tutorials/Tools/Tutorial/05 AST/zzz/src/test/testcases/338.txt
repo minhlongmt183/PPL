@@ -1,0 +1,8 @@
+function xix(c: boolean) : array [-10 .. 10] of integer;
+                   var x:real ;
+                   BEgin
+                    whILe(a<>1) 
+                    do                         
+                        xix();                    
+                   EnD
+                   

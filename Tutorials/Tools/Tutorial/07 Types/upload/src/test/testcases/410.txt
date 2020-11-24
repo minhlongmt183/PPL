@@ -1,0 +1,15 @@
+
+        
+var conbocuoi1, conbocuoi2:integer;
+
+procedure conbocuoi1(hihi:integer);
+begin
+    return;
+end
+
+procedure main(); 
+var conbocuoi1:integer;
+    conbocuoi2:real;
+begin 
+    conbocuoi1();
+end

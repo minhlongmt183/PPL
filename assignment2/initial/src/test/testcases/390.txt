@@ -1,8 +1,0 @@
-
-            Function: sum
-            Parameter: lst
-            Body:
-                func = x+y;
-                rs = reduce(func,lst[1],lst[0]);
-            EndBody.
-            

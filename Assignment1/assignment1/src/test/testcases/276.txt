@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n
-        Body: 
-            x = !(!(!(y) && z) || (x > 3) !(y < 2));
-        EndBody.

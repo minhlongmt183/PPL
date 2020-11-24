@@ -1,0 +1,1 @@
+Program([VarDecl(Id(UFile),StringType),FuncDecl(Id(Main),[],VoidType(),[],[CallStmt(Id(Assign),[Id(UFile),StringLiteral(C:\\ADDTEXT.TXT)]),CallStmt(Id(Append),[Id(UFile)]),CallStmt(Id(Writeln),[Id(UFile),BinaryOp(+,StringLiteral(How many sentences, ),StringLiteral(are present in this file?))]),CallStmt(Id(Close),[Id(UFile)])])])

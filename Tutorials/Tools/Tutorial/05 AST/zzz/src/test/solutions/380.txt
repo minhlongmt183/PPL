@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(Hello),[VarDecl(Id(a),IntType),VarDecl(Id(b),IntType)],VoidType(),[],[CallStmt(Id(writeln),[StringLiteral(Hello, world!)])])])

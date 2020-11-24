@@ -1,0 +1,15 @@
+
+        Function: main
+        Parameter: n , a, b, c, d, e, f
+        Body:
+            Var: i;  
+            For(i = 0, i < n, 1) Do
+                If i == 10 Then
+                    Break;
+                Else
+                    Continue;
+                EndIf.
+            EndFor.
+            Return 0;
+        EndBody.
+        

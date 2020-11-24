@@ -1,0 +1,16 @@
+
+                float a, d ;
+                int function1(){
+	               int b,c,e,k;
+	               e = a + b - c * d / (k-1) ;
+	               x = (2-1) ;
+	               return x;
+                }
+
+                float function2(int x, y){
+	               float k;
+	               k = (1-2)*2*3*(4-function1());
+	               a = 1 * 2 * 3 * (function1()*2);
+	               return k ;
+                }
+                

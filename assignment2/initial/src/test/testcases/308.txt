@@ -1,5 +1,0 @@
-Function: foo 
-        Parameter: n 
-        Body: 
-            Var: x[12]={12};
-        EndBody.

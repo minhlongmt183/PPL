@@ -1,0 +1,13 @@
+Procedure xix(c: real) ;
+                    var l: real;
+                   BEgin
+                    with a , b : integer ; c : array [1 .. 2] of real ; 
+                    do BEgin
+                        daa := c [a] + b ;
+                         xix();xix1(a,b,c);
+                        with a , b : integer ; do BEgin
+                          xix2(a,b,"anc");
+                    EnD
+                    EnD
+                   EnD
+                   

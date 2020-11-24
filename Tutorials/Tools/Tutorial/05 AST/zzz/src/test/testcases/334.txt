@@ -1,0 +1,15 @@
+Procedure xix(c: real) ;
+                   var x:real ;
+                   BEgin
+                    if(a>1) then 
+                        BEgin 
+                            a:=1 ;
+                            if (1<2) then 
+                                BEgin
+                                    x:=1 ; 
+                                    hiih();
+                                EnD
+                            else xix(a+1,2);
+                        EnD
+                   EnD
+                   
