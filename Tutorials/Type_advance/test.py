@@ -32,6 +32,31 @@ class VarDecl: #name:str
     def __str__(self):
         return """{}("{}")""".format("VarDecl",self.name)
 
+class FuncDecl:
+    #name:str,param:List[VarDecl],local:List[Decl],stmts:List[Stmt]
+    def __init__(self,name, param, local, stmts):
+        self.name   = name
+        self.param  = param
+        self.local  = local
+        self.stmts  = stmts
+
+    def accept(self,visitor,param):
+        return visitor.visitFuncDecl(self,param)
+    def __str__(self):
+        return """{}("{},{}")("{}")""".format("FuncDecl",self.name, self.param, self.local, self.stmts)
+
+class CallStmt: #name:str,args:List[Exp]
+    def __init__(self,name, args):
+        self.name   = name
+        self.args   = args
+
+    def accept(self,visitor,param):
+        return visitor.visitCallStmt(self,param)
+    def __str__(self):
+        return """{}("{}")""".format("CallStmt",self.name, self.args)
+
+
+
 class Assign: #lhs:Id,rhs:Exp
     def __init__(self,lhs,rhs):
         self.lhs,self.rhs = lhs,rhs
@@ -102,166 +127,105 @@ class FloatType(Type): pass
 class BoolType(Type): pass
 
 
+
+
 class StaticCheck(Visitor):
 
-    def visitProgram(self,ctx:Program,o):
-         #decl:List[VarDecl],stmts:List[Stmt]
-        check1 = reduce(lambda env, elem: self.visit(elem, env), ctx.decl + ctx.stmts, {})
-
-    def visitVarDecl(self,ctx:VarDecl,o):#name:str
-        if 'Block' in o:
-            if ctx.name in o[0]:
-                raise Redeclared(ctx)
-            o[0][ctx.name] = None
+    def updateType(self, name, new_type, o):
+        if name in o[0]:
+            o[0][name] = new_type
         else:
-            o[ctx.name] = None
+            o[1][name] = new_type
+        
+        return o
+    
+    def getType(self, name, o):
+        return o[0][name] if name in o[0] else o[1][name]
+
+    def visitProgram(self,ctx:Program,o):
+        #decl:List[Decl],stmts:List[Stmt]
+        reduce(lambda env, elem: self.visit(elem, env), ctx.decl + ctx.stmts, ({},{}))
+
+    def visitVarDecl(self,ctx:VarDecl,o): 
+        #name:str
+        if ctx.name in o[0]:
+            raise Redeclared(ctx)
+        
+        o[0][ctx.name] = None
         return o
 
-    def visitBlock(self,ctx:Block,o):
-        #decl:List[VarDecl],stmts:List[Stmt]
-        new_env = reduce(lambda env, elem: self.visit(elem, env), ctx.decl, ({},'Block'))
-        o.update(new_env[0])
 
-        return reduce(lambda env, elem: self.visit(elem, env), ctx.stmts, o)
+    def visitFuncDecl(self,ctx:FuncDecl,o):
+        #name:str,param:List[VarDecl],local:List[Decl],stmts:List[Stmt]
+        if ctx.name in o[0]:
+            raise Redeclared(ctx)
+        
+        outer_env = o[1].copy()
+        outer_env.update(o[0])
+        
+        new_env = ({},outer_env)
+        new_env = reduce(lambda env, elem: self.visit(elem, env), ctx.param + ctx.local + ctx.stmts, new_env)
+
+        param_type = [self.getType(var.name, new_env) for var in ctx.param]
+        o[0][ctx.name] = param_type
+
+        return o
+
+
+
+    def visitCallStmt(self,ctx:CallStmt,o):
+        # name:str,args:List[Exp]
+        if (ctx.name not in o[0]) and (ctx.name not in o[1]):
+            raise UndeclaredIdentifier(ctx.name)
+        
+        param_type  = self.getType(ctx.name, o)
+        arg_type    = [self.visit(arg, o) for arg in ctx.args]
+
+        if (type(param_type) is list) and (len(arg_type) != len(param_type)):
+            raise TypeMismatchInStatement(ctx)
+        
+        for i in range(len(arg_type)):
+            if (not param_type[i]) and (not arg_type[i]):
+                raise TypeCannotBeInferred(ctx)
+            elif (not arg_type[i]):
+                self.updateType(ctx.args[i].name, param_type[i], o)
+                continue
+            elif type(arg_type[i]) != type(param_type[i]) and param_type[i]:
+                raise TypeMismatchInStatement(ctx)
+        # for arg, param in zip(arg_type, param_type):
+        #     if not arg and not param:
+        #         raise TypeCannotBeInferred(ctx)
+
+        #     elif not arg:
+        #         self.updateType(ctx.args[arg_type.index(arg)].name, param, o)
+        #         continue
+
+        #     elif type(arg) != (type(param)) and param:
+        #         raise TypeMismatchInStatement(ctx)
+        
+        return o
+
+
 
     def visitAssign(self,ctx:Assign,o):
         #lhs:Id,rhs:Exp
-        id_type = self.visit(ctx.lhs, o)
-        type_of_exp = self.visit(ctx.rhs,o)
-
-        if id_type == None:
-            id_type = self.visit(ctx.lhs, o)
+        exp_type    = self.visit(ctx.rhs, o)
+        id_type     = self.visit(ctx.lhs, o)
 
 
-        if id_type == None:
-            if type_of_exp == None:
-                raise TypeCannotBeInferred(ctx)
-            else:
-                o[ctx.lhs.name] = type_of_exp
-        elif type_of_exp == None:
-            o[ctx.rhs.name] = id_type
-        else:
-            if type(id_type) != type(type_of_exp):
-                raise TypeMismatchInStatement(ctx)
+        if (not id_type) and (not exp_type):
+            raise TypeCannotBeInferred(ctx)
+
+        elif not id_type:
+            self.updateType(ctx.lhs.name, exp_type, o)
+            
+        elif not exp_type:
+            self.updateType(ctx.rhs.name, id_type, o)
+                
+        elif type(id_type) != type(exp_type):
+            raise TypeMismatchInStatement(ctx)
 
         return o
-
-
-    def visitBinOp(self,ctx:BinOp,o):
-        # op:str,e1:Exp,e2:Exp
-        left_type = self.visit(ctx.e1,o)
-        right_type = self.visit(ctx.e2,o)
-
-
-        if (type(left_type) == type(None)) and (type(right_type) != type(None)):
-            o[ctx.e1.name] = right_type
-            left_type = right_type
-        elif (type(left_type) != type(None)) and (type(right_type) == type(None)):
-            o[ctx.e2.name] = left_type
-            right_type = left_type
-
-
-        if ctx.op in ['+', '-', '*', '/']:
-
-            if (type(left_type)== IntType) and (type(right_type) == IntType):
-                return IntType()
-
-            if type(left_type) == type(None):
-                o[ctx.e1.name] = IntType()
-                o[ctx.e2.name] = IntType()
-                return IntType()
-
-            raise TypeMismatchInExpression(ctx)
-
-        elif ctx.op in ['+.', '-.', '*.', '/.']:
-            if (type(left_type)== FloatType) and (type(right_type) == FloatType):
-                return FloatType()
-
-            if type(left_type) == type(None):
-                o[ctx.e1.name] = FloatType()
-                o[ctx.e2.name] = FloatType()
-                return FloatType()
-
-            raise TypeMismatchInExpression(ctx)
-
-        elif ctx.op in ['>', '=']:
-            if (type(left_type)== IntType) and (type(right_type) == IntType):
-                return BoolType()
-
-            if type(left_type) == type(None):
-                o[ctx.e1.name] = IntType()
-                o[ctx.e2.name] = IntType()
-                return BoolType()
-
-            raise TypeMismatchInExpression(ctx)
-
-        elif ctx.op in ['>.', '=.']:
-            if (type(left_type)== FloatType) and (type(right_type) == FloatType):
-                return BoolType()
-
-            if type(left_type) == type(None):
-                o[ctx.e1.name] = FloatType()
-                o[ctx.e2.name] = FloatType()
-                return BoolType()
-
-            raise TypeMismatchInExpression(ctx)
-
-        elif ctx.op in ['&&', '||', '>b' , '=b' ]:
-            if (type(left_type)== BoolType) and (type(right_type) == BoolType):
-                return BoolType()
-
-            if type(left_type) == type(None):
-                o[ctx.e1.name] = BoolType()
-                o[ctx.e2.name] = BoolType()
-                return BoolType()
-
-            raise TypeMismatchInExpression(ctx)
-
-
-
-    def visitUnOp(self,ctx:UnOp,o):
-        param_type = self.visit(ctx.e, o)
-        if ctx.op == '-':
-            if type(param_type) == type(None):
-                o[ctx.e.name] = IntType()
-                return IntType()
-            elif type(param_type) != IntType:
-                raise TypeMismatchInExpression(ctx)
-            return param_type
-
-        if ctx.op == '-.':
-            if type(param_type) == type(None):
-                o[ctx.e.name] = FloatType()
-                return FloatType()
-            elif type(param_type) != FloatType:
-                raise TypeMismatchInExpression(ctx)
-            return param_type
-
-        if ctx.op == '!':
-            if type(param_type) == type(None):
-                o[ctx.e.name] = BoolType()
-                return BoolType()
-            elif type(param_type) != BoolType:
-                raise TypeMismatchInExpression(ctx)
-            return param_type
-
-        if ctx.op == 'i2f':
-            if type(param_type) == type(None):
-                o[ctx.e.name] = IntType()
-            elif type(param_type) != IntType:
-                raise TypeMismatchInExpression(ctx)
-
-            return FloatType()
-
-
-        if ctx.op == 'floor':
-            if type(param_type) == type(None):
-                o[ctx.e.name] = FloatType()
-            elif type(param_type) != FloatType:
-                raise TypeMismatchInExpression(ctx)
-
-            return IntType()
-
 
     def visitIntLit(self,ctx:IntLit,o):
         return IntType()
@@ -273,19 +237,20 @@ class StaticCheck(Visitor):
         return BoolType()
 
     def visitId(self, ctx, o):
-        if ctx.name not in o:
+        if ctx.name not in o[0] and ctx.name not in o[1]:
             raise UndeclaredIdentifier(ctx.name)
-        return o[ctx.name]
+            
+        return self.getType(ctx.name, o)
 
 
 class StaticError(Exception):
     pass
 
 @dataclass
-class Undeclared(StaticError):
+class Redeclared(StaticError):
     target: object
     def __str__(self):
-        return "Undeclare " + str(self.target)
+        return "Redeclare " + str(self.target)
 
 @dataclass
 class UndeclaredIdentifier(StaticError):
@@ -314,7 +279,8 @@ class TypeCannotBeInferred(StaticError):
     def __str__(self):
         return "Type Cannot Be Inferred: "+ str(self.stmt)
 
-StaticCheck().visitProgram(Program([VarDecl("x")],[Assign(Id("x"),IntLit(3)),Block([VarDecl("y")],[Assign(Id("x"),Id("y")),Assign(Id("y"),BoolLit(True))])])
+StaticCheck().visitProgram(Program([VarDecl("x"),FuncDecl("foo",[VarDecl("y"),VarDecl("z")],[],[])],[CallStmt("foo",[IntLit(3),Id("x")])])
+
 
 ,
     None
