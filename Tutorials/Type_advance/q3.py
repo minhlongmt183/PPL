@@ -46,10 +46,17 @@ class StaticCheck(Visitor):
         outer_env.update(o[0])
         
         new_env = ({},outer_env)
-        new_env = reduce(lambda env, elem: self.visit(elem, env), ctx.param + ctx.local + ctx.stmts, new_env)
+        reduce(lambda env, elem: self.visit(elem, env), ctx.param + ctx.local + ctx.stmts, new_env)
 
         param_type = [self.getType(var.name, new_env) for var in ctx.param]
         o[0][ctx.name] = param_type
+
+        for name in outer_env:
+            if name in new_env[0]:
+                continue
+
+            if (not self.getType(name, o)) and (outer_env[name]):
+                self.updateType(name, outer_env[name], o)
 
         return o
 
@@ -57,23 +64,27 @@ class StaticCheck(Visitor):
 
     def visitCallStmt(self,ctx:CallStmt,o):
         # name:str,args:List[Exp]
-        if (ctx.name not in o[0]) and (ctx.name not in o[1]):
+        if (ctx.name not in o[0]):
             raise UndeclaredIdentifier(ctx.name)
         
         param_type  = self.getType(ctx.name, o)
         arg_type    = [self.visit(arg, o) for arg in ctx.args]
+        
 
-        if (type(param_type) is list) and (len(arg_type) != len(param_type)):
+        if (type(param_type) is not list) or (len(arg_type) != len(param_type)):
             raise TypeMismatchInStatement(ctx)
         
         for i in range(len(arg_type)):
             if (not param_type[i]) and (not arg_type[i]):
                 raise TypeCannotBeInferred(ctx)
+            elif not param_type[i]:
+                param_type[i] = arg_type[i]
             elif (not arg_type[i]):
                 self.updateType(ctx.args[i].name, param_type[i], o)
-                continue
-            elif type(arg_type[i]) != type(param_type[i]) and param_type[i]:
+            elif type(arg_type[i]) != type(param_type[i]):
                 raise TypeMismatchInStatement(ctx)
+        
+        self.updateType(ctx.name,param_type, o)
         
         return o
 
@@ -83,7 +94,6 @@ class StaticCheck(Visitor):
         #lhs:Id,rhs:Exp
         exp_type    = self.visit(ctx.rhs, o)
         id_type     = self.visit(ctx.lhs, o)
-
 
         if (not id_type) and (not exp_type):
             raise TypeCannotBeInferred(ctx)
@@ -113,3 +123,5 @@ class StaticCheck(Visitor):
             raise UndeclaredIdentifier(ctx.name)
             
         return self.getType(ctx.name, o)
+
+

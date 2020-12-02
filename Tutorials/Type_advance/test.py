@@ -164,10 +164,17 @@ class StaticCheck(Visitor):
         outer_env.update(o[0])
         
         new_env = ({},outer_env)
-        new_env = reduce(lambda env, elem: self.visit(elem, env), ctx.param + ctx.local + ctx.stmts, new_env)
+        reduce(lambda env, elem: self.visit(elem, env), ctx.param + ctx.local + ctx.stmts, new_env)
 
         param_type = [self.getType(var.name, new_env) for var in ctx.param]
         o[0][ctx.name] = param_type
+
+        for name in outer_env:
+            if name in new_env[0]:
+                continue
+
+            if (not self.getType(name, o)) and (outer_env[name]):
+                self.updateType(name, outer_env[name], o)
 
         return o
 
@@ -187,21 +194,13 @@ class StaticCheck(Visitor):
         for i in range(len(arg_type)):
             if (not param_type[i]) and (not arg_type[i]):
                 raise TypeCannotBeInferred(ctx)
+            elif not param_type[i]:
+                param_type[i] = arg_type[i]
+                self.updateType(ctx.name,param_type, o)
             elif (not arg_type[i]):
                 self.updateType(ctx.args[i].name, param_type[i], o)
-                continue
-            elif type(arg_type[i]) != type(param_type[i]) and param_type[i]:
+            elif type(arg_type[i]) != type(param_type[i]):
                 raise TypeMismatchInStatement(ctx)
-        # for arg, param in zip(arg_type, param_type):
-        #     if not arg and not param:
-        #         raise TypeCannotBeInferred(ctx)
-
-        #     elif not arg:
-        #         self.updateType(ctx.args[arg_type.index(arg)].name, param, o)
-        #         continue
-
-        #     elif type(arg) != (type(param)) and param:
-        #         raise TypeMismatchInStatement(ctx)
         
         return o
 
@@ -211,7 +210,6 @@ class StaticCheck(Visitor):
         #lhs:Id,rhs:Exp
         exp_type    = self.visit(ctx.rhs, o)
         id_type     = self.visit(ctx.lhs, o)
-
 
         if (not id_type) and (not exp_type):
             raise TypeCannotBeInferred(ctx)
@@ -241,6 +239,7 @@ class StaticCheck(Visitor):
             raise UndeclaredIdentifier(ctx.name)
             
         return self.getType(ctx.name, o)
+
 
 
 class StaticError(Exception):
@@ -279,8 +278,7 @@ class TypeCannotBeInferred(StaticError):
     def __str__(self):
         return "Type Cannot Be Inferred: "+ str(self.stmt)
 
-StaticCheck().visitProgram(Program([VarDecl("x"),FuncDecl("foo",[VarDecl("y"),VarDecl("z")],[],[])],[CallStmt("foo",[IntLit(3),Id("x")])])
-
+StaticCheck().visitProgram(Program([VarDecl("x"), VarDecl("y"),FuncDecl("foo",[],[],[Assign(Id("x"),FloatLit(2))])],[CallStmt("foo",[]), Assign(Id("x"), Id("y"))])
 
 ,
     None
