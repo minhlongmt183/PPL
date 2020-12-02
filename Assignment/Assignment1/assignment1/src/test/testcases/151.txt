@@ -1,6 +1,0 @@
-
-        Var: x = 4367;
-        ** command
-        * in
-        * function
-        

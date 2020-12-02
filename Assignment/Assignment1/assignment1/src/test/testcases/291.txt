@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            While 1 Do
-                inp = [234]fsfsg + 13 \. 124;
-            EndWhile.
-        EndBody.
-        

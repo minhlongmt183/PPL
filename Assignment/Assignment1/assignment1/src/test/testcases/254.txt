@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            Do
-                f_n_f(12);
-            While () EndDo.
-        EndBody.
-        

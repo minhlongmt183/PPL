@@ -1,6 +1,0 @@
-
-        Var: checkValue = False;
-        If checkValue:
-            a[1 , .2, 3., :6] = arr[:9].plot(hihihi)
-        EndIf.
-        

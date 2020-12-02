@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(foo)[VarDecl(Id(n))],([][Assign(Id(x),FloatLiteral(0.0)),CallStmt(Id(func),[Id(x)])]))])

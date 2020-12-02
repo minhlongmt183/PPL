@@ -1,7 +1,0 @@
-
-        Function: main
-        Parameter: f
-        Body:
-            print("Hello World!'"");
-        EndBody.
-        

@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            Var: array[10][10];
-            array[3][4] = foo(3. *. 8.0e-12134, a *. b);
-            Return 0;
-        EndBody.
-        

@@ -1,7 +1,0 @@
-
-        Function: foo 
-        Parameter: n 
-        Body: 
-            x = f[n+3];
-        EndBody.
-        

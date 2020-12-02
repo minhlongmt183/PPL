@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            func = func + ffffffffff(); 
-        EndBody.
-        

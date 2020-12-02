@@ -1,7 +1,0 @@
-
-        Function: foo
-        Parameter: a[5], b
-        Body:
-            c = count(**DDDDDD**) * f(214);;
-        EndBody.
-        

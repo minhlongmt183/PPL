@@ -1,9 +1,0 @@
-
-        Function: main
-        Body:
-            blu = 123 * 23 - 123 - -.--.- "dasd";
-            While (print(blu[123]) = 123, i < 10, 10)
-                tttttttest();
-            EndWhile.
-        EndBody.
-        

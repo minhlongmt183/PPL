@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(main)[VarDecl(Id(n)),VarDecl(Id(arr),[5,5])],([VarDecl(Id(i),IntLiteral(10)),VarDecl(Id(arr),[5,2],ArrayLiteral(ArrayLiteral(),ArrayLiteral()))][Dowhile([],[Break()],BinaryOp(<=,Id(i),Id(n))),Return(IntLiteral(0))]))])

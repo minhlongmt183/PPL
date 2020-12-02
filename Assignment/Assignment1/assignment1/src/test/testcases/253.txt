@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            While () Do
-                print("lalala");
-            EndWhile.
-        EndBody.
-        

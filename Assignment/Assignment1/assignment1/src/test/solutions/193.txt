@@ -1,1 +1,0 @@
-Function,:,check_numer,x,=,0x124,;,y,=,0o11413,;,z,=,0xFD0,o12439999asdha,;,Var,:,ch3ck1,=,check,(,x,),;,Var,:,ch3ck2,=,check,(,y,),;,Var,:,ch3ck3,=,check,(,z,),;,EndFor,.,<EOF>

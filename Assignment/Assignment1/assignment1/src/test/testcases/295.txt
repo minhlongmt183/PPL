@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            For (i = "12", dasd < 2, 22) Do
-                in = (in(in(in)))[123];
-            EndFor.
-        EndBody.
-        

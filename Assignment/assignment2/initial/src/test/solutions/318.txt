@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(foo)[VarDecl(Id(a),[10,34])],([][Assign(CallExpr(Id(f),[BinaryOp(==,IntLiteral(8),IntLiteral(4))]),CallExpr(Id(foo),[CallExpr(Id(foo2),[CallExpr(Id(x),[StringLiteral(hello),StringLiteral(ages),Id(name)])])]))]))])

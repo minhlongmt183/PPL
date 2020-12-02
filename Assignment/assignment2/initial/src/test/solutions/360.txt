@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(arry)[],([][While(BinaryOp(>,Id(x),IntLiteral(1)),[],[Assign(Id(inp),BinaryOp(+,ArrayCell(Id(arr),[IntLiteral(2),Id(fsfsg)]),BinaryOp(*.,IntLiteral(20),IntLiteral(124)))),If(BinaryOp(==,Id(inp),IntLiteral(123)),[],[Break()])Else([],[])])]))])

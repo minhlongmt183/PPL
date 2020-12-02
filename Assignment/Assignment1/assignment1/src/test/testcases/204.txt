@@ -1,7 +1,0 @@
-
-        Function: main
-        Body:
-            Var
-            Return;
-        EndBody.
-        

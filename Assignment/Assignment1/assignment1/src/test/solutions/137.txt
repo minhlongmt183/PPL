@@ -1,1 +1,0 @@
-bool,isEqual,=,(,12,-,4,),==,13,-,5,),;,If,(,isEqual,),print,(,Illegal Escape In String: Equal\g

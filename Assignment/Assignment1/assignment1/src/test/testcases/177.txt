@@ -1,8 +1,0 @@
-
-        Function: main
-        ** this is the normal function**
-        Body:
-            x = 5;
-            foo(x + 5);
-        EndBody.
-        

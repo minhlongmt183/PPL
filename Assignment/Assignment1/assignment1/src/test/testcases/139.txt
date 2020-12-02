@@ -1,2 +1,0 @@
-
-        "String \t with"**comment\a\k**" and not in comment \a\k

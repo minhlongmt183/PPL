@@ -1,7 +1,0 @@
-
-        Var: x;
-        Function: main
-        Body:
-            Var: x = 5 While x EndWhile.;
-        EndBody.
-        

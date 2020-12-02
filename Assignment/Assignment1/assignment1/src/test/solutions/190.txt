@@ -1,1 +1,0 @@
-I have a pen, I have a apple ... Uh ...Apple-Pen\'s  '"Pineapple-Pen'"'" \b \n \f \r \t Pen-Pineapple-Apple-Pen,<EOF>

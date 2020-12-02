@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(main)[],([][Dowhile([VarDecl(Id(arr),[1134,4],BooleanLiteral(false))],[],BooleanLiteral(true))]))])

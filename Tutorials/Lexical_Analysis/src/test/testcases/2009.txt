@@ -1,3 +1,0 @@
-float foo(float a, b) {
-	 return foo(1, a, b);
-}

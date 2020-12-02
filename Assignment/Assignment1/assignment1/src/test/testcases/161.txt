@@ -1,5 +1,0 @@
-
-            add_sub = +-+....-.-.-----.+-.+.;
-            mul_div = *.*.* \.\.\..*.*.;
-            strr = "abcd{35}" ***abcdeAhadsad123\n\a\b**;
-        

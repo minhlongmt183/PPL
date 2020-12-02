@@ -1,3 +1,0 @@
-int returnValue(int a) {
-	return a;
-}

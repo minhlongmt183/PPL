@@ -1,4 +1,0 @@
-
-        Var: isEqual = False;
-        isEqual = !isEqual;
-        

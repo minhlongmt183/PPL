@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            If ((x = 2) == 1)
-            ElseIf x == True
-            EndIf.
-        EndBody.
-        

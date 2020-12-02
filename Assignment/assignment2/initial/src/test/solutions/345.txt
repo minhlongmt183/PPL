@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(foo)[VarDecl(Id(arr),[10]),VarDecl(Id(n))],([][Dowhile([VarDecl(Id(x),IntLiteral(1))],[For(Id(x),IntLiteral(1),BinaryOp(<,Id(x),Id(n)),IntLiteral(17),[],[])],CallExpr(Id(foo),[]))]))])

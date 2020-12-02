@@ -1,1 +1,0 @@
-int a, b; float c, d; int temp, result

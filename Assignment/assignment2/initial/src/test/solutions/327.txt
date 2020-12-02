@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(main)[],([VarDecl(Id(x),ArrayLiteral(IntLiteral(121),IntLiteral(8374598),Id(foo1),Id(foo2)))][Return(IntLiteral(0))]))])

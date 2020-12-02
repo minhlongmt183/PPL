@@ -1,3 +1,0 @@
-
-        Var: x = "string\rwith\tnumber:98";
-        Var: y = "this is unclosed string

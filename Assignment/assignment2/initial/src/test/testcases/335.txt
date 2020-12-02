@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            x = (123 + f() + g(12, abc*xd-r) *. g[54])[2] *. 5.03e-1232;
-        EndBody.
-        

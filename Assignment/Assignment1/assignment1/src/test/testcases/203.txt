@@ -1,7 +1,0 @@
-
-        Var: x = {1,2,{2};
-        Function: main
-        Body:
-        Return;
-        EndBody.
-        

@@ -1,4 +1,0 @@
-
-            array = "\' \b\f \\ adksjflakdjf '!#%"
-            x = [123];
-        

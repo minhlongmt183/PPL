@@ -1,7 +1,0 @@
-
-        Function: main
-        Parameter: none
-        Body:
-            print({1, 2, 3, 4}[{1, 2, 3,}]);
-        EndBody.
-        

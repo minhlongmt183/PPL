@@ -1,9 +1,0 @@
-
-        Var: x;
-        Function: main
-        Body:
-           Var: a[20];
-           a[9 + foo(10, 15)] = a[b[3][0]] + foo();
-           Return 0;
-        EndBody.
-        

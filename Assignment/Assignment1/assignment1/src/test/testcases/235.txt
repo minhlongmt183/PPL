@@ -1,9 +1,0 @@
-
-        Function: main
-        Body:
-            Var: x = 10;
-            goo(2. +. 4., 2 *. 10);
-            x = 1;
-        EndBody.
-        Var: x;
-        

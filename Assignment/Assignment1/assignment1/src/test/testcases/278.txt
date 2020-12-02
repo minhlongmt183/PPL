@@ -1,7 +1,0 @@
-
-        Function: main
-        Parameter: f(f(f(f())))
-        Body:
-            print("Hello'"");
-        EndBody.
-        

@@ -1,8 +1,0 @@
- 
-        Function: foo 
-        Parameter: n 
-        Body: 
-            Var: x = 12;
-            value = a + 13 *.9;
-        EndBody.
-        

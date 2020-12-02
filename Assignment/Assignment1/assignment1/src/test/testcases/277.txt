@@ -1,7 +1,0 @@
-
-        Function: main
-        Body:
-            kk = 123;
-            123 = kk;
-        EndBody.
-        

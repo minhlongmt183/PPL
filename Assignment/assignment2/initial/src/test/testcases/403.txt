@@ -1,8 +1,0 @@
-Function: breaktest
-		Parameter: x
-		Body:
-			While x >= 1 Do
-				If y<100 Then Break;
-				EndIf.
-			EndWhile.
-		EndBody.

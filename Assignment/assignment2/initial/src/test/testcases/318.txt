@@ -1,7 +1,0 @@
-
-        Function: foo
-        Parameter: a[10][34]
-        Body:
-            f(8 == 4) = foo(foo2(x("hello", "ages", name)));
-        EndBody.
-        

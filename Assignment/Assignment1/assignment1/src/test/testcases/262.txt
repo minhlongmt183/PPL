@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            v = 4. *. 3 \. e * Return();
-        EndBody.
-        

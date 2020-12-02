@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(main)[],([][Dowhile([],[CallStmt(Id(print_Numb3r),[IntLiteral(12)]),While(Id(x),[VarDecl(Id(x))],[If(BinaryOp(==,Id(x),IntLiteral(5)),[],[CallStmt(Id(printLn),[])])ElseIf(BinaryOp(==,Id(x),IntLiteral(2)),[],[CallStmt(Id(readLn),[])])Else([],[]),Assign(Id(x),BinaryOp(+,Id(x),IntLiteral(1)))])],BooleanLiteral(true))]))])

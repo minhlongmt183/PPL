@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            in = bli * bli - (2 + (24 -. 423 + "123" <=. 5345.));
-        EndBody.
-        

@@ -1,5 +1,0 @@
-
-        "unclosed
-        string
-        multiple lines"
-        

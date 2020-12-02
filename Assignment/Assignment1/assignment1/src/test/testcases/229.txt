@@ -1,8 +1,0 @@
-
-        Function: main
-        Body:
-            Var: x[10];
-            x[0] = fact(f(0))[0][4][123];
-            Return 0;
-        EndBody.
-        

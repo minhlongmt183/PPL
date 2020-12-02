@@ -1,9 +1,0 @@
-
-        Var: x;
-        Function: main
-        Body:
-           Var: m;
-           x = m = 10;
-           Return 0;
-        EndBody.
-        

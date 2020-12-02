@@ -1,6 +1,0 @@
-
-        ** Test
-        * multi-line
-        * comment
-        * asdjlkajsdflkajefoihaweiofhasdfihasdfsd
-        **

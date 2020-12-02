@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            x = (5 + f() * 3 + a[10])[2] * 5 \ 8;
-        EndBody.
-        

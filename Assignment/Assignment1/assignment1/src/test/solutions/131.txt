@@ -1,1 +1,0 @@
-Var,:,x,=,new,int,[,100,],;,Do,*,(,x,+,i,),=,i,%,65,+,int,(,Error Token '

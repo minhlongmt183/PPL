@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-           value[12] =  info("name", "age") + arr[9][6];
-        EndBody.
-        

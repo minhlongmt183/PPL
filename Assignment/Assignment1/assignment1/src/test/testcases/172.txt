@@ -1,2 +1,0 @@
-
-        Var: x = 10, y[100], str = "string'", v@raribl3;

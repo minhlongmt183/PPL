@@ -1,1 +1,0 @@
-Program([FuncDecl(Id(test1)[],([][Assign(Id(m),BinaryOp(+,CallExpr(Id(test2),[Id(a),Id(b)]),CallExpr(Id(test1),[Id(x)])))])),FuncDecl(Id(test2)[],([][Dowhile([],[If(BinaryOp(==,Id(z),IntLiteral(1)),[],[Assign(Id(x),UnaryOp(!,Id(a)))])Else([],[])],Id(x))]))])

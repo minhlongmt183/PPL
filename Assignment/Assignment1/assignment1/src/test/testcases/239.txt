@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            x = (x)[2] * 5 \ 8;
-        EndBody.
-        

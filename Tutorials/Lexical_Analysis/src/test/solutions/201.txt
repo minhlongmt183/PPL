@@ -1,1 +1,0 @@
-'BKITLexer' object has no attribute 'data_type'

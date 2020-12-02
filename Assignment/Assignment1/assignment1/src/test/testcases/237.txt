@@ -1,6 +1,0 @@
-
-        Function: main
-        Body:
-            x = 5[10] + 4;
-        EndBody.
-        

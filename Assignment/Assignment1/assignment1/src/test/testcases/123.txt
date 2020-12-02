@@ -1,3 +1,0 @@
-
-        Var: f_number = -5e+;
-        

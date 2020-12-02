@@ -1,7 +1,0 @@
-
-        Function: foo
-        Parameter: a[5], b
-        Body:
-            f(1 >=. 4 == 12 < 4 + 5 *.);
-        EndBody.
-        
