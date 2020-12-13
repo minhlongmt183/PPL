@@ -91,6 +91,14 @@ Symbol("printLn",MType([],VoidType())),
 Symbol("printStr",MType([StringType()],VoidType())),
 Symbol("printStrLn",MType([StringType()],VoidType()))]    
 
+    def check(self):
+        return self.visit(self.ast,self.global_envi)
+    
+    def checkRedeclared(self, symbol, kind, env):
+        res = list(filter(lambda e: symbol.name == e.name, env))
+        if res is not None:
+            raise Redeclared(kind, symbol.name)
+
     def updateType(self, name, new_type, o, isSymbol=False, idx = False):
         if name in o[0]:
             if not isSymbol:
@@ -119,49 +127,143 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
 
         if isSymbol == 'ret':
             return o[0][name].mtype[1] if name in o[0] else o[1][name].mtype[1]
-            
+
         if isSymbol == 'param':
             return o[0][name].mtype[0][idx] if name in o[0] else o[1][name].mtype[0][idx]
 
 
    
 
-    def visitProgram(self,ast, c):
-        '''
-        ast: decl : List[Decl]
-        '''
+    def visitProgram(self,ast, env):
+        printDebug("======SCAN PROGRAM======")
         global_scope = reduce(
-            lambda env, elem:
-            self.visit(elem, env), ast.decl,({},{}))
+            lambda returnList, decl:
+                [self.visit(
+                    decl,
+                    {'env': returnList, 'scan': False}
+                )] + returnList,
+            ast.decl,
+            env[:]
+        )
+        printDebug("======GLOBAL======", env=global_scope)
+
+        if not any(map(
+            lambda symbol: isinstance(
+                symbol.mtype,
+                MType) and symbol.name == 'main' and isinstance(
+                    symbol.mtype[1],
+                    VoidType) and len(symbol.mtype[0]) == 0,
+                global_scope)):
+            raise NoEntryPoint()
+            
+        funcs = filter(lambda x: isinstance(x, FuncDecl), ast.decl)
+
+        for func in funcs:
+            self.visit(func, {'env': global_scope, 'scan': True})
+
+        for symbol in global_scope:
+            if not isinstance(symbol.mtype, MType):
+                continue
+            if symbol.name == 'main' and \
+                    isinstance(symbol.mtype[1], VoidType):
+                continue
+
+        return global_scope
 
     
-    def visitFuncDecl(self, ast, o):
-        '''ast
-    name: Id
-    param: List[VarDecl]
-    body: Tuple[List[VarDecl],List[Stmt]]'''
-        if ast.name.name in o[0]:
-            raise Redeclared(ast)
+    def visitFuncDecl(self, ast, param):
+        '''
+        ast: FuncDecl{
+            name: Id
+            param: List[VarDecl]
+            body: Tuple[List[VarDecl],List[Stmt]]
+        }
+        param: {
+            env: List[Symbol], # Global Reference Environment
+            scan: Bool
+        }
+        raise Redeclared(Parameter)
+        raise Redeclared(Variable)
+        => Symbol if not scan else None
+        '''
 
-        outer_env = o[1].copy()
-        outer_env.update(o[0])
+        env = param['env']
+        scan = param['scan']
 
-        new_env = ({},outer_env)
-        lst = ast.param + ast.body[0] + ast.body[1]
-        reduce(lambda env, elem: self.visit(elem, env), lst, new_env)
+        if not scan:
+            printDebug("FUNCDECL", env=env, stop=False)
+            param_type = reduce(
+                    lambda scope, vardecl:
+                        [self.visit(vardecl, {'env': scope})] + scope,
+                    ast.param,
+                    []
+                    )
 
-        param_type = [self.getType(var.name, new_env) for var in ctx.param]
-        s = Symbol(ctx.name, MType(param_type, None))
-        o[0][ctx.name] = s
+            s = Symbol(
+                ast.name.name,
+                MType(
+                    param_type,
+                    VoidType
+                ))
+                
+            self.checkRedeclared(s, Function(), env)
+            return s
+        else:
+            printDebug("========SCAN FUNC========")
+            printDebug(str(ast))
 
-        for name in outer_env:
-            if name in new_env[0]:
-                continue
-            if (not self.getType(name, o)) and (outer_env[name]):
-                self.updateType(name, outer_env[name], o)
+            try:
+                # visits VarDecl -- throws Redeclared(Variable)
+                parameter = reduce(
+                    lambda scope, vardecl:
+                        [self.visit(vardecl, {'env': scope})] + scope,
+                    ast.param,
+                    []
+                )
+            except Redeclared as e:
+                raise Redeclared(Parameter(), e.n)
+            printDebug("PARAM", env=parameter)
+
+            # visits VarDecl -- throws Redeclared(Variable)
+            local_scope = reduce(
+                lambda scope, vardecl:
+                    [self.visit(vardecl, {'env': scope})] + scope,
+                ast.local,
+                parameter  # for safety reason, copy
+            )
+            printDebug("LOCAL_VAR", env=local_scope)
+            # self.mergeGlobal2Local(local_scope, env)
+            local_scope += env
+            printDebug("LOCAL_ENV", env=local_scope, stop=False)
+
+
     
     def visitVarDecl(self, ast, c):
-        pass
+        '''
+        ast: VarDecl{
+            
+            variable : Id
+            varDimen : List[int] # empty list for scalar variable
+            varInit  : Literal   # null if no initial
+        }
+        param: {
+            env: List[Symbol]
+            ~~scan: Bool~~ # ignore
+        }
+        => Symbol
+        '''
+        env = param['env']
+        printDebug("VARDECL", env=env, stop=False)
+
+        s = Symbol(
+            ast.variable.name,
+            self.visit(ast.varInit, c)
+        )
+
+        self.checkRedeclared(s, Variable(), env)
+
+        return s
+
 
     def visitIntType(self, ast, param):
         return None
@@ -182,7 +284,60 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
         return None
 
     def visitBinaryOp(self, ast, param):
-        pass
+        '''
+        ast: BinaryOp{
+                op:str
+                left:Expr
+                right:Expr
+                }
+        param: list[Symbol]
+        raise TypeMismatchInExpression
+            (+,-,*, \, %): (Int,Int)=>Int
+            (+., -., *., \.): (Float, Float) => Float
+            (==, !=, <,>, <=,>=): (Int, Int) => Bool
+            (=/=, <., >., <=., >=.): (Float, Float) => Bool
+        => Type
+        '''
+
+        op = ast.op
+        left_type = self.visit(ast.left, param)
+        right_type = self.visit(ast.right, param)
+
+        def deferType(acceptableTypes, returnType=None):
+            if isinstance(left_type, VoidType):
+                left_type = acceptableTypes
+                self.updateType(ast.left, acceptableTypes, param)
+            
+            if isinstance(right_type, VoidType):
+                right_type = acceptableTypes
+                self.updateType(ast.right, acceptableTypes, param)
+
+            if not isinstance(left_type, acceptableTypes):
+                raise TypeMismatchInExpression(ast)
+            if not isinstance(right_type, acceptableTypes):
+                raise TypeMismatchInExpression(ast)
+
+            if returnType is not None:
+                return returnType
+            if isinstance(left_type, FloatType) or \
+                    isinstance(right_type, FloatType):
+                return FloatType()
+            if isinstance(left_type, type(right_type)):
+                return left_type
+
+            raise TypeMismatchInExpression(ast)
+    
+        if op in ('+','-','*', '\\',' %'):
+            return deferType((IntType), IntType())
+
+        if op in ('+.','-.','*.', '\\.'):
+            return deferType((FloatType), FloatType())
+
+        if op in ('==', '!=', '<','>', '<=','>='):
+            return deferType((IntType), BoolType())
+
+        if op in ('=/=', '<.', '>.', '<=.', '>=.'):
+            return deferType((FloatType), BoolType())
 
     def visitUnaryOp(self, ast, param):
         pass
@@ -190,8 +345,40 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
     def visitCallExpr(self, ast, env):
         pass
 
-    def visitId(self, ast, param):
-        pass
+    def visitId(self, ast, o):
+        '''
+        ast: ID
+        o: List[Symbol] or {
+            'env': List[Symbol]
+            'kind': kind
+        }
+        raise Undeclared
+    => Type: Symbol.mtype
+        '''
+        env = o['env'] if not isinstance(o, list) else o
+        kind = o['kind'] if not isinstance(o, list) else Identifier()
+
+        res = list(filter(lambda e: ast.name == e.name, env))
+
+        if len(res) == 0:
+            raise Undeclared(kind, ast.name)
+
+        if isinstance(kind, Identifier):
+            if isinstance(res.mtype, MType):
+                raise Undeclared(kind, ast.name)
+            return res.mtype
+    
+        # param is dict
+        if isinstance(kind, Function):
+            # check if mtype -- aka function
+            if not isinstance(res.mtype, MType):
+                raise Undeclared(kind, ast.name)
+
+            if isinstance(kind, Function):
+                if isinstance(res.mtype[1], VoidType):
+                    raise Undeclared(kind, ast.name)
+            return res.mtype
+
 
     def visitArrayCell(self, ast, param):
         pass
