@@ -95,47 +95,116 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
         return self.visit(self.ast,self.global_envi)
     
     def checkRedeclared(self, symbol, kind, env):
+
         res = list(filter(lambda e: symbol.name == e.name, env))
-        if res is not None:
+        if len(res) > 0:
             raise Redeclared(kind, symbol.name)
 
-    def updateType(self, name, new_type, o, isSymbol=False, idx = False):
-        if name in o[0]:
-            if not isSymbol:
-                o[0][name] = new_type
-            elif isSymbol == 'ret':
-                oldMType = o[0][name].mtype
-                newMType = (oldMType[0],new_type)
-                o[0][name].mtype = newMType
-            elif isSymbol == 'param':
-                o[0][name].mtype[0][idx] = new_type
-        else:
-            if not isSymbol:
-                o[1][name] = new_type
-            elif isSymbol == 'ret':
-                oldMType = o[1][name].mtype
-                newMType = (oldMType[1],new_type)
-                o[1][name].mtype = newMType
-            elif isSymbol == 'param':
-                o[1][name].mtype[1][idx] = new_type
-
-        return o
+    def updateType(self, symbol, new_type, param):
+        oldType = symbol.mtype
+        newType = (oldType[0],new_type)
+        symbol.mtype = newType
     
     def getType(self, name, o, isSymbol=False, idx=False):
         if not isSymbol:
             return o[0][name] if name in o[0] else o[1][name]
 
         if isSymbol == 'ret':
-            return o[0][name].mtype[1] if name in o[0] else o[1][name].mtype[1]
+            return o[0][name].mtype.restype if name in o[0] else o[1][name].mtype.restype
 
         if isSymbol == 'param':
             return o[0][name].mtype[0][idx] if name in o[0] else o[1][name].mtype[0][idx]
 
+    def callBody(self, ast, env):
+        '''
+        ast: CallStmt
+        env: List[Symbol]
+        raise TypeMismatchInStatement | TypeMismatchInExpression
+        => Type: MType
+        ; Used by CallStmt and CallExpr
+        ; Both have exact structure difference only on
+        ; Raising Error and Kind Expectation
+        '''    
+        callParam = [self.visit(x, env) for x in ast.param]
+ 
 
-   
+        mtype = self.visit(  # visits Id
+            ast.method,
+            {
+                'env': env,
+                'kind': Function() 
+            }
+        )
+        rightParam = mtype.intype
+
+        error = TypeMismatchInExpression if isinstance(ast, CallExpr) \
+            else TypeMismatchInStatement
+        
+        if len(rightParam) != len(callParam):
+            raise error(ast)
+        
+        for pair in zip(rightParam, callParam):
+            lhs = pair[0]
+            rhs = pair[1]
+
+            self.checkTypeCompatibility(lhs, rhs, error(ast))
+
+        return mtype.restype
+
+    def loopBody(self, stmts, param):
+        '''
+        stmt: List[Statement]
+        param: {
+            'env': List[Symbol],
+            'inloop': Bool,
+            'rettype': Type
+        }
+        '''
+        env = param['env']
+        rettype = param['rettype']
+
+        outFlag = False
+        for stmt in stmts:
+            # if outFlag:
+            #     raise UnreachableStatement(stmt)
+            if self.visit(
+                stmt, {
+                    'env': env, 'inloop': True, 'rettype': rettype
+                }
+            ):
+                outFlag = True
+
+        return False
+
+    def checkTypeCompatibility(self, lhs, rhs, error):
+        # array check
+        if isinstance(lhs, ArrayType):
+            if not isinstance(rhs, ArrayType):
+                raise error
+            if lhs.lower != rhs.lower or \
+                    lhs.upper != rhs.upper:
+                raise error
+            # self.checkTypeCompatibility(lhs.eleType, rhs.eleType, error)
+            if not isinstance(lhs.eleType, type(rhs.eleType)):
+                raise error
+
+        # float/int coersion
+        elif isinstance(lhs, FloatType):
+            if not isinstance(rhs, (IntType, FloatType)):
+                raise error
+
+        # else
+        elif not isinstance(lhs, type(rhs)):
+            raise error   
 
     def visitProgram(self,ast, env):
-        printDebug("======SCAN PROGRAM======")
+        # printDebug("======SCAN PROGRAM======")
+        s1 = Symbol("read",MType([],StringType()))
+        s2 = Symbol("printLn",MType([],VoidType()))
+        s3 = Symbol("printStr",MType([StringType()],VoidType()))
+        s4 = Symbol("printStrLn",MType([StringType()],VoidType()))  
+        env = [s1,s2,s3,s4]
+
         global_scope = reduce(
             lambda returnList, decl:
                 [self.visit(
@@ -143,16 +212,14 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
                     {'env': returnList, 'scan': False}
                 )] + returnList,
             ast.decl,
-            env[:]
+            env
         )
-        printDebug("======GLOBAL======", env=global_scope)
+
+ 
+        # printDebug("======GLOBAL======", env=global_scope)
 
         if not any(map(
-            lambda symbol: isinstance(
-                symbol.mtype,
-                MType) and symbol.name == 'main' and isinstance(
-                    symbol.mtype[1],
-                    VoidType) and len(symbol.mtype[0]) == 0,
+            lambda symbol: symbol.name == 'main' ,
                 global_scope)):
             raise NoEntryPoint()
             
@@ -165,7 +232,7 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
             if not isinstance(symbol.mtype, MType):
                 continue
             if symbol.name == 'main' and \
-                    isinstance(symbol.mtype[1], VoidType):
+                    isinstance(symbol.mtype.restype, VoidType):
                 continue
 
         return global_scope
@@ -187,11 +254,12 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
         => Symbol if not scan else None
         '''
 
+  
         env = param['env']
         scan = param['scan']
 
         if not scan:
-            printDebug("FUNCDECL", env=env, stop=False)
+            # printDebug("FUNCDECL", env=env, stop=False)
             param_type = reduce(
                     lambda scope, vardecl:
                         [self.visit(vardecl, {'env': scope})] + scope,
@@ -209,7 +277,7 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
             self.checkRedeclared(s, Function(), env)
             return s
         else:
-            printDebug("========SCAN FUNC========")
+            # printDebug("========SCAN FUNC========")
             printDebug(str(ast))
 
             try:
@@ -218,23 +286,20 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
                     lambda scope, vardecl:
                         [self.visit(vardecl, {'env': scope})] + scope,
                     ast.param,
-                    []
+                    env
                 )
             except Redeclared as e:
                 raise Redeclared(Parameter(), e.n)
-            printDebug("PARAM", env=parameter)
+            # printDebug("PARAM", env=parameter)
 
             # visits VarDecl -- throws Redeclared(Variable)
             local_scope = reduce(
                 lambda scope, vardecl:
                     [self.visit(vardecl, {'env': scope})] + scope,
-                ast.local,
+                ast.body[0]+ast.body[1],
                 parameter  # for safety reason, copy
             )
-            printDebug("LOCAL_VAR", env=local_scope)
-            # self.mergeGlobal2Local(local_scope, env)
             local_scope += env
-            printDebug("LOCAL_ENV", env=local_scope, stop=False)
 
 
     
@@ -253,7 +318,7 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
         => Symbol
         '''
         env = param['env']
-        printDebug("VARDECL", env=env, stop=False)
+        # printDebug("VARDECL", env=env, stop=False)
 
         s = Symbol(
             ast.variable.name,
@@ -296,6 +361,7 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
             (+., -., *., \.): (Float, Float) => Float
             (==, !=, <,>, <=,>=): (Int, Int) => Bool
             (=/=, <., >., <=., >=.): (Float, Float) => Bool
+            ('&&', '||'): (Bool, Bool) => Bool
         => Type
         '''
 
@@ -338,71 +404,249 @@ Symbol("printStrLn",MType([StringType()],VoidType()))]
 
         if op in ('=/=', '<.', '>.', '<=.', '>=.'):
             return deferType((FloatType), BoolType())
+        
+        if op in ('&&', '||'):
+            return deferType((BoolType), BoolType())
 
     def visitUnaryOp(self, ast, param):
-        pass
+        '''
+        ast: UnaryOp{
+            op:str
+            body:Expr
+        }
+        param: List[Symbol]
+        raise TypeMismatchInExpression
+            ! Bool => Bool
+            - Int => Int
+            -. Float => Float
+        => Type
+        '''
+        op = ast.op
+        expr = self.visit(ast.body, param)
+
+        if op in ('!'):
+            if not isinstance(expr, BoolType):
+                raise TypeMismatchInExpression(ast)
+            return BoolType()
+        
+        if op in ('-'):
+            if not isinstance(expr, IntType):
+                raise TypeMismatchInExpression(ast)
+            return expr
+        
+        if op in ('-.'):
+            if not isinstance(expr, FloatType):
+                raise TypeMismatchInExpression(ast)
+            return expr
+        
 
     def visitCallExpr(self, ast, env):
-        pass
+        '''
+        ast: CallExpr ~ CallStmt
+        env: list[Symbol]
+        raise Undeclared(Function)
+        raise TypeMismatchInExpression
+            wrong param size
+            wrong param type
+        => Type
+        '''
+        if isinstance(env, dict):
+            return self.callBody(ast, env['env'])
+        
+        return self.callBody(ast, env)
 
     def visitId(self, ast, o):
         '''
-        ast: ID
+        ast: ID: name
         o: List[Symbol] or {
             'env': List[Symbol]
             'kind': kind
         }
         raise Undeclared
-    => Type: Symbol.mtype
+        => Type: Symbol.mtype
         '''
+
         env = o['env'] if not isinstance(o, list) else o
         kind = o['kind'] if not isinstance(o, list) else Identifier()
 
-        res = list(filter(lambda e: ast.name == e.name, env))
 
-        if len(res) == 0:
+        resLst = list(filter(lambda e: ast.name == e.name, env))
+        
+      
+        if len(resLst) == 0:
             raise Undeclared(kind, ast.name)
 
-        if isinstance(kind, Identifier):
-            if isinstance(res.mtype, MType):
-                raise Undeclared(kind, ast.name)
-            return res.mtype
-    
-        # param is dict
-        if isinstance(kind, Function):
-            # check if mtype -- aka function
-            if not isinstance(res.mtype, MType):
-                raise Undeclared(kind, ast.name)
-
-            if isinstance(kind, Function):
-                if isinstance(res.mtype[1], VoidType):
-                    raise Undeclared(kind, ast.name)
-            return res.mtype
+        return resLst[0].mtype
 
 
     def visitArrayCell(self, ast, param):
-        pass
+        '''
+        ast: ArrayCell{
+            arr:Expr
+            idx:List[Expr]
+        }
+        param: List[Symbol]
+        raise TypeMismatchInExpression
+            arr[idx] --> ArrayType[IntType] => ArrayType.eleType
+        => Type
+        '''
+        arr = self.visit(ast.arr, param)
+        idx = self.visit(ast.idx, param)
+
+        if not isinstance(idx, IntType) or \
+                not isinstance(arr, ArrayType):
+            raise TypeMismatchInExpression(ast)
+
+        return arr.eleType
 
     def visitAssign(self, ast, param):
-        pass
-    
+        '''
+        ast: Assign{        
+            lhs: LHS
+            rhs: Expr
+        }
+        param: {
+            'env': List[Symbol]
+            'inloop': Bool
+        }
+        raise TypeMismatchInStatement
+            Float := Float/Int
+            Int := Int
+            Bool := Bool
+            // no String, Array
+        => Returned?
+        '''
+        env = param['env']
+        left_type = self.visit(ast.lhs, env)
+        right_type = self.visit(ast.exp, env)
+
+        if (isinstance(left_type, VoidType) and \
+            isinstance(right_type, VoidType)):
+            raise TypeMismatchInStatement(ast)
+
+        self.checkTypeCompatibility(
+            left_type, right_type, TypeMismatchInStatement(ast))
+
+        return False    
+
     def visitIf(self, ast, param):
+        '''
+        ast: If{
+            ifthenStmt:List[Tuple[Expr,List[VarDecl],List[Stmt]]]
+            elseStmt:Tuple[List[VarDecl],List[Stmt]]
+        }
+        param: {
+            'env': List[Symbol]
+            'inloop': Bool
+            'rettype': Type
+        }
+        => Returned?
+        '''
+
+        # expr = self.visit(ast.expr, param['env'])
+        # if not isinstance(expr, BoolType):
+        #     raise TypeMismatchInStatement(ast)
         pass
 
+
     def visitFor(self, ast, param):
+        '''
+        ast: For{
+                idx1: Id
+                expr1:Expr
+                expr2:Expr
+                expr3:Expr
+                loop: Tuple[List[VarDecl],List[Stmt]]
+        }
+        param: {
+            'env': List[Symbol],
+            'rettype': Type
+        }
+        '''
         pass
 
     def visitContinue(self, ast, param):
-        pass
+        '''
+        ast: Continue
+        param: {
+            'inloop': Bool
+        }
+        '''
+        if not param['inloop']:
+            raise ContinueNotInLoop()
+        return True
+
+    def visitBreak(self, ast, param):
+        '''
+        ast: Break
+        param: {
+            'inloop': Bool
+        }
+        '''
+        if not param['inloop']:
+            raise BreakNotInLoop()
+        return True
 
     def visitReturn(self, ast, param):
-        pass
+        '''
+        ast: Return{
+            expr:Expr # None if no expression
+        }
+        param: {
+            'env': List[Symbol]
+            'rettype': Type
+        }
+        '''
+        rettype = param['rettype']
+        env = param['env']
+        if isinstance(rettype, VoidType):
+            if ast.expr is not None:
+                raise TypeMismatchInStatement(ast)
+        else:
+            if ast.expr is None:
+                raise TypeMismatchInStatement(ast)
+            self.checkTypeCompatibility(
+                rettype, self.visit(ast.expr, env),
+                TypeMismatchInStatement(ast)
+            )
+
+        return True
 
     def visitWhile(self, ast, param):
-        pass
+        '''
+        ast: While{
+            exp: Expr
+            sl:Tuple[List[VarDecl],List[Stmt]]
+        }
+        param: {
+            'env': List[Symbol],
+            'inloop': Bool,
+            'rettype': Type
+        }
+        '''
+        env = param['env']
+
+        exp = self.visit(ast.exp, env)
+        if not isinstance(exp, BoolType):
+            raise TypeMismatchInStatement(ast)
+
+        # return self.loopBody(ast.sl, param)
+        return False
 
     def visitCallStmt(self, ast, param):
-        pass
+        '''
+        ast: CallStmt
+        param: {
+            'env': list[Symbol]
+        }
+        raise Undeclared(Procedure)
+        raise TypeMismatchInStatement
+            wrong param size
+            wrong param type
+        => Returned?
+        '''
+        return self.callBody(ast, param['env'])  # skips return
+         
 
     def visitIntLiteral(self, ast, param):
         return IntType()
