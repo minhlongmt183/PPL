@@ -212,7 +212,20 @@ class CodeGenVisitor(BaseVisitor):
 
 
     def visitUnaryOp(self, ctx, o):
-        pass
+        frame = o.frame
+        sym = o.sym
+
+        bodycode, bodytype = self.visit(ctx.body, Access(frame, sym))
+
+        code = ''
+        code += bodycode
+
+        if ctx.op in ['!']:
+            code += self.emit.emitNOT(bodytype, frame)
+        elif ctx.op in ['-', '-.']:
+            code += self.emit.emitNEGOP(bodytype, frame)
+        
+        return code, bodytype
 
     def visitCallExpr(self, ast, env):
         pass
