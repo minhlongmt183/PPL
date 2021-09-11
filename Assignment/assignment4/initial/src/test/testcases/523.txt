@@ -1,0 +1,30 @@
+
+        Function: main
+        Body:
+            Var: x = 10;
+            Var: u = 1, y = 3, z = 3;
+            test();
+        EndBody.
+        Function: test
+        Body:
+            Var: i = 0;
+            For (i = 0, i < 10, 1) Do
+                Var: s[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+                print(string_of_int(i));
+                print(string_of_int(int_of_float(sum(s))));
+                print(" ");
+                i = i + 2;
+            EndFor.
+        EndBody.
+        Function: sum
+        Parameter: x[9]
+        Body:
+            Var: sum = 0.0;
+            Var: i = 0;
+            Do
+                sum = sum +. float_to_int(x[i]);
+                i = i + 1;
+            While i < 9 EndDo.
+            Return sum;
+        EndBody.
+        

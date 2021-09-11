@@ -1,0 +1,7 @@
+Function: foo
+Body:
+    Var: x[2][3], y[2][3];
+    x[1][1] = "asdlasdl\n\n'"fhfhg";
+    y = x;
+    x[2] = y[2];
+EndBody.

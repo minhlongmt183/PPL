@@ -1,0 +1,25 @@
+        Function: main
+        Body:
+            Var: x,y,z,f, arr[5];
+            If x Then
+                y = "7384";
+            ElseIf !x Then
+                z = True;
+            ElseIf z Then
+                Var: d;
+                For (d = 0x738, !z, 1100) Do
+                    d = int_of_string(y);
+                    While f <. 1.12 Do
+                        Var: t;
+                        z = !z;
+                        arr[1] = -t;
+                        Do
+                            Var: n;
+                            n = t;
+                        While z EndDo.
+                    EndWhile.
+                EndFor.
+            EndIf.
+            Return n;
+        EndBody.
+       

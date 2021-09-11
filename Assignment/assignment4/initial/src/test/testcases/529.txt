@@ -1,0 +1,17 @@
+
+        Function: main
+        Body:
+            printStrLn(string_of_bool(-. 1.0 =/= 1.0));
+            printStrLn(string_of_bool(1.0 =/= 1.0));
+            printStrLn(string_of_bool(-. 2.0 <=. -. 2.0));
+            printStrLn(string_of_bool(2.0 <=. 1.0));
+            printStrLn(string_of_bool(1.0 >=. -. 1.0));
+            printStrLn(string_of_bool(1.0 >=. 1.0));
+            printStrLn(string_of_bool(-. 1.0 >. 1.0));
+            printStrLn(string_of_bool(1.0 >. 1.0));
+            printStrLn(string_of_bool(1.0 <. 1.0));
+            printStrLn(string_of_bool(1.0 <. -. 1.0));
+            printStrLn(string_of_bool(1.0 <. 2.0));
+            printStrLn(string_of_bool(1.0 >=. 2.0));
+        EndBody.
+        

@@ -1,0 +1,9 @@
+
+        Function: main
+        Body:
+            Var: str[2][3] = {{True, False, True}, {False, True, False}};
+            If str[0][2] Then
+                print(string_of_bool(str[0][0]));
+            EndIf.
+        EndBody.
+        

@@ -1,0 +1,14 @@
+        Function: foo
+        Body:
+            Return False;
+        EndBody.
+
+        Function: main
+        Body:
+            Return 1;
+            Return int_of_float(43.e5233);
+            Return foo();
+            Return False;
+        EndBody.
+
+       

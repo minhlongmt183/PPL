@@ -1,0 +1,11 @@
+
+        Function: main
+        Body:
+            Var: i;
+            For (i=1,i<10,1) Do
+                printLn();
+            EndFor.
+            i = 2;
+            b = i;
+        EndBody.
+        

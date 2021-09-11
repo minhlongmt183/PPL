@@ -1,0 +1,13 @@
+        Var: x[10], y;
+        Function: foo
+        Body:
+            x[1] = !y;
+            Return x;
+        EndBody.
+
+        Function: main
+        Body:
+            x[8] = foo()[1];
+            Return y && x;
+        EndBody.
+       

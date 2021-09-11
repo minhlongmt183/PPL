@@ -1,0 +1,24 @@
+
+        Var: arr[4] = {1, 2, 3, 4}, i = 2;
+        Function: foo
+        Parameter: flag
+        Body:
+            Var: k[4] = {11, 22, 33, 44};
+            i = -2;
+            While flag > 0 Do
+                Return arr;            
+            EndWhile.
+            Return k;
+        EndBody.
+        Function: main
+        Body:
+            Var: j = 3;
+            foo(0)[foo(1)[1]] = i;
+            printStrLn(string_of_int(i));
+            While j > -1 Do
+                print(string_of_int(arr[j]));
+                print(string_of_int(foo(0)[foo(1)[1]]));
+                j = j - 1;
+            EndWhile.
+        EndBody.
+        

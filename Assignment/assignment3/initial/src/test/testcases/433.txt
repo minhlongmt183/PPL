@@ -1,0 +1,13 @@
+        Var: x;
+        Function: main
+        Parameter: x ,y
+        Body:
+            Return;
+        EndBody.
+
+        Function: main
+        Parameter: x ,y
+        Body:
+            Return;
+        EndBody.
+       

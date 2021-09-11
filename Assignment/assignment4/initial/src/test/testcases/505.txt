@@ -1,0 +1,20 @@
+
+        Function: main
+        Body:
+            Var: x = 2;
+            If x == foo(3) Then
+                print("A");
+            ElseIf x > 2 Then
+                print("B");
+                x = foo(int_of_string("-423"));
+            Else
+                x = foo(int_of_string("-234"));
+                print(string_of_float(float_to_int(x)));
+            EndIf.
+        EndBody.
+        Function: foo
+        Parameter: x
+        Body:
+            Return x;
+        EndBody.
+        

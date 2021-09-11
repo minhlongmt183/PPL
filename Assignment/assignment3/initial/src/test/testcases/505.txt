@@ -1,0 +1,21 @@
+Var: a, b[0x213123135468987ABC][2], c;
+Function: foo
+Parameter: n
+Body:
+    Do
+        foo(True || n);
+    While n EndDo.
+EndBody.
+
+
+Function: main
+Body:
+    b[foo2()][foo(False)] = "ghhgfhfhgf";
+EndBody.
+
+
+Function: foo2
+Body:
+    Var: c[9][3][8];
+    Return 1;
+EndBody.

@@ -1,0 +1,15 @@
+
+        Var: x[5] = {"A", "B", "C", "D", "E"};
+        Function: main
+        Body:
+            Var: k = 4;
+            While k >= 0 Do
+                print(x[k]);
+                k = k - foo();
+            EndWhile.
+        EndBody.
+        Function: foo
+        Body:
+            Return 1;
+        EndBody.
+        

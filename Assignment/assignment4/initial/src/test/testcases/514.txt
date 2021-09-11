@@ -1,0 +1,17 @@
+
+        Var: x[5] = {0.1, 1.2, 2.4, 3.5, 4.3};
+        Function: main
+        Body:
+            swap(x[0], x[1]);
+            print(string_of_float(x[0]));
+            print(string_of_float(x[1]));
+        EndBody.
+        Function: swap
+        Parameter: x, y
+        Body:
+            Var: i = 3.2;
+            i = x;
+            x = y;
+            y = i;
+        EndBody.
+        

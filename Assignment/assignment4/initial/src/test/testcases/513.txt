@@ -1,0 +1,14 @@
+
+        Var: x[4] = {True, False, False, True};
+        Function: main
+        Body:
+            Var: i = 0;
+            If x[0] && x[1] Then
+                print("A");
+            EndIf.
+            Do
+                print(string_of_bool(x[i]));
+                i = i + 1;
+            While i < 4 EndDo.
+        EndBody.
+        

@@ -1,0 +1,23 @@
+        Function: sum
+        Parameter: x
+        Body:
+            If x < 0 Then Return --x;
+            Else Return x;
+            EndIf.
+            Return x;
+        EndBody.
+
+        Function: check
+        Parameter: board[8],index
+        Body:
+            Var: i;
+                For (i=0,i<index,1) Do
+                    If (i!=index) && (sum(i-index) == sum(board[i]-board[index])) Then
+                        Return True;
+                    ElseIf i ==-1 Then Return False;
+                    EndIf.
+                EndFor.
+
+            Return False;
+        EndBody.
+       

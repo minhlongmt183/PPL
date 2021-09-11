@@ -1,0 +1,13 @@
+        Function: funct
+        Body:
+            printLn();
+        EndBody.
+
+        Function: while
+        Body:
+        Var: i;
+        While i < 12345 Do
+            funct();
+        EndWhile.
+        EndBody.
+       

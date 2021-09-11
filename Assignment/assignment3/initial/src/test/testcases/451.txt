@@ -1,0 +1,7 @@
+        Var: x[10], y;
+        Function: main
+        Body:
+            x[1] = y;
+            Return x;
+        EndBody.
+       

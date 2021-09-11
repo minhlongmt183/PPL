@@ -1,0 +1,29 @@
+
+        Var: x[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Function: main
+        Body:
+            Var: idx = 0;
+            foo();
+            While idx < 10 Do
+                print(string_of_int(x[idx]));
+                idx = idx + 1;
+            EndWhile.
+        EndBody.
+        Function: foo
+        Body:
+            Var: i = 3;
+            For (i = 3, cond(i), up()) Do
+                x[i] = 22;
+            EndFor.
+        EndBody.
+        Function: cond
+        Parameter: x
+        Body:
+            Var: upper_bound = 6;
+            Return x < upper_bound;
+        EndBody.
+        Function: up
+        Body:
+            Return 5 \ 2;
+        EndBody.
+        

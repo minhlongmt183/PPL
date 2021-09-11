@@ -1,0 +1,30 @@
+
+        Var: x[2][1][2] = {{{True, False}}, {{False, True}}};
+        Function: main
+        Body:
+            Var: i = 0;
+            For (i = 0, i < 2, foo()) Do
+                Var: k = 0;
+                While k < 1 Do
+                    Var: h = 0;
+                    Do
+                        print(string_of_bool(x[i][foo() - 1][h]));
+                        h = h + 1;
+                    While h < 2 EndDo.
+                    k = k + 1;
+                EndWhile.
+            EndFor.
+            If x[foo()][foo() - 1][foo()] Then
+                Var: str = "string";
+                If x[0][0][0] Then
+                    Var: str = 2203.2203;
+                    printStrLn(string_of_float(str));
+                EndIf.
+                printStrLn(str);
+            EndIf.
+        EndBody.
+        Function: foo
+        Body:
+            Return 1;
+        EndBody.
+        

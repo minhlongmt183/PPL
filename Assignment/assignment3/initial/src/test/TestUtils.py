@@ -152,9 +152,8 @@ class TestChecker:
             dest.close()
         dest = open("./test/solutions/" + str(num) + ".txt","r")
         line = dest.read()
-
-        if (line != expect):
-            print("input: {}\n expect: {}".format(line, expect))
+        if line != expect:
+            print("input: {}\nexpect: {}".format(line, expect))
         return line == expect
 
     @staticmethod

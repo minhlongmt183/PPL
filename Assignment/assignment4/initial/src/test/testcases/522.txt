@@ -1,0 +1,27 @@
+
+        Function: main
+        Body:
+            Var: x = 10;
+            Var: u = 1, y = 3, z = 3;
+            test();
+        EndBody.
+        Function: test
+        Body:
+            If True Then
+                Var: x[5] = {1, 2, 3, 4, 5};
+                Var: i = 0;
+                While i < 5 Do
+                    Var: y[5] = {1.2, 3.4, 4.2, 4.9, 2.4};
+                    If x[i] == int_of_float(y[i]) Then
+                        printStrLn(string_of_float(y[i]));
+                    Else
+                        Var: y = "hello";
+                        print(y);
+                        print(" ");
+                        printStrLn(string_of_int(x[i]));
+                    EndIf.
+                    i = i + 1;
+                EndWhile.
+            EndIf.
+        EndBody.
+        

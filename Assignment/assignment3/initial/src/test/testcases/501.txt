@@ -1,0 +1,7 @@
+Var: x[2];
+
+Function: main
+Body:
+    x[2] = {{1,2,3,4},{1,2,3,4}}[0][1];
+    Return x ;
+EndBody.

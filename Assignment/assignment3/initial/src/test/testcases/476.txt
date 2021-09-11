@@ -1,0 +1,17 @@
+
+        Function: main
+        Body:
+            printStrLn(foo(True, False, 1, 2, 3));
+        EndBody.
+        Function: foo
+        Parameter: a,b,x,y,z
+        Body:
+            Var: arr[1][2][3], t=1;
+            If a Then
+                Return "";
+            ElseIf b Then
+                Return "abc";
+            EndIf.
+            Return t;
+        EndBody.
+        

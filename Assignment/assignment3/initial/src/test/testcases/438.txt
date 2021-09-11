@@ -1,0 +1,10 @@
+        Function: power
+        Parameter: value ,power
+        Body:
+            Var: res =1, i;
+            For (i=power,i>0,-1) Do
+                res = res * value;
+            EndFor.
+            Return res;
+        EndBody.
+       

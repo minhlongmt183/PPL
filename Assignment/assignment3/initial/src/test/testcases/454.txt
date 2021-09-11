@@ -1,0 +1,12 @@
+        Function: main
+        Body:
+            Var: x,y,z;
+            If x Then
+                y = "55555";
+            ElseIf !x Then
+                z = True;
+            ElseIf z Then
+            EndIf.
+            Return y;
+        EndBody.
+       

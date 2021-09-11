@@ -1,0 +1,11 @@
+        Var: x,y;
+        Function: testcase
+        Parameter: a,b
+        Body:
+            If x == b Then  x = y;
+            ElseIf a == b Then Var: x; x = y;
+            Else Var: x; x = y;
+            EndIf.
+            Return x;
+        EndBody.
+       

@@ -1,0 +1,13 @@
+        Function: main
+        Body:
+            Var: x;
+            x = foo()[x];
+
+        EndBody.
+
+
+        Function:foo
+        Body:
+            Return {1,2,3,4,5};
+        EndBody.
+       

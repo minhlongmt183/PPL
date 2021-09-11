@@ -1,0 +1,14 @@
+
+        Var: x[2] = {1, 2};
+        Function: foo
+        Body:
+            Return x;
+        EndBody.
+        Function: main
+        Body:
+            foo()[1] = 222;
+            print(string_of_int(foo()[1]));
+            print(string_of_int(x[1]));
+            print(string_of_int(x[0]));
+        EndBody.
+        

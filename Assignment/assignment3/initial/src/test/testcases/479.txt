@@ -1,0 +1,11 @@
+
+        Function: main
+        Body:
+            Var: i;
+            While i<.10.1 Do
+                printLn();
+            EndWhile.
+            i = 2.1;
+            b = i;
+        EndBody.
+        

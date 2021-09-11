@@ -1,0 +1,10 @@
+            Var: x[10], y = 10, z =1., t = "12313";
+            Function: main
+            Parameter: a
+            Body:
+                Var: b;
+                a = 1+ 1+ 1;
+                a = x[1];
+                Return 1;
+            EndBody.
+           

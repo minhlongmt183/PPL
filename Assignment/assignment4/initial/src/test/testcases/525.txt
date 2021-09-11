@@ -1,0 +1,10 @@
+
+        Var: arr[4] = {1, 2, 3, 4}, i = 2;
+        
+        Function: main
+        Body:
+            Var: k = 5.0;
+            Var: m = 2.0;
+            print(string_of_float(k \. m));
+        EndBody.
+        

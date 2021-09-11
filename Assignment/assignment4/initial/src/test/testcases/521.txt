@@ -1,0 +1,29 @@
+
+        Function: main
+        Parameter: x, y
+        Body:
+            Var: n = 100;
+            Var: num = 0;
+            While num < n + 1 Do
+                If isPrime(num) Then
+                    print(string_of_int(num));
+                    print(" ");
+                EndIf.
+                num = num + 1;
+            EndWhile.
+        EndBody.
+        Function: isPrime
+        Parameter: x
+        Body:
+            Var: i = 2;
+            If x < 2 Then
+                Return False;
+            EndIf.
+            For (i = 2, i < x, 1) Do
+                If x % i == 0 Then
+                    Return False;
+                EndIf.
+            EndFor.
+            Return True;
+        EndBody.
+        

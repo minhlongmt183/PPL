@@ -1,0 +1,29 @@
+
+        Var: x[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Function: main
+        Body:
+            Var: a[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            Var: b = 1, c = 3;
+            a[9] = b * c;
+            Do
+                print(string_of_int(a[b]));
+                b = b + 1;
+            While check(b, 10) EndDo.
+            a = foo();
+            b = 0 * 8;
+            foo()[b] = int_of_float(20.5);
+            While b < 10 Do
+                print(string_of_int(foo()[b]));
+                b = b + 1;
+            EndWhile.
+        EndBody.
+        Function: foo
+        Body:
+            Return x;
+        EndBody.
+        Function: check
+        Parameter: a, b
+        Body:
+            Return a < b;
+        EndBody.
+        

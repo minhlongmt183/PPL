@@ -1,0 +1,80 @@
+Tên : Võ Minh Long
+MSSV: 1812951
+
+câu 1:
+-   Trong phép and (&) chỉ cần 1 tìm thấy 1 biểu thức là 0 (False) thì không cần xét đến các biểu thức ở sau.
+Làm như vậy sẽ giảm số bước cần phải chạy đệ quy
+-   phép gán trong if (a = func()) thì sẽ lấy kết quả gán vào a đồng thời trả về chính kết quả đó.
+ 
+int mul(Node root ) {
+
+    if ( root == null) return 1 ;
+    if (root.val & (leff_val = mul (root.left)) & (right_val = mul (root.right))):
+        return root.val * left_val * right_val
+
+    return 0 
+}
+
+câu 2:
+A. -   x,y are passed by value 
+    -   thuộc dạng "input only parameters" 
+    -   giá trị tham số sẽ không đổi sau khi thực hiện hàm.
+    ==> swap(i, a[i]): không làm thay đổi giá trị của i và a[i]
+    ==>   Giá trị in ra:  0, 2 , 1 , 0
+
+B. x,y are passed by value-result 
+    -   thuộc dạng "Input-Output Parameters"
+    -   giá trị tham số sẽ cập nhật sau khi hàm thực hiện xong (cập nhật bởi tham số hình thức)
+    -   Giá trị in ra:  2, 0 , 1 , 0
+
+C. x,y are passed by reference 
+    -   thuộc dạng "Input-Output Parameters" 
+    -   giá trị tham số sẽ cập nhật trực tiếp trong khi hàm thực hiện
+    -   Giá trị in ra:  2, 0 , 1 , 0
+
+D.x,y are passed by name 
+    -   thuộc dạng "Input-Output Parameters"
+    -   tham số truyền ở dạng code và sẽ được cập nhật trong lúc thực hiện hàm
+    t = x   <==> t = i = 0
+    x = y   <==> i = a[i] = a[0] = 2
+    y = t   <==> a[i] = t <==> a[2] = 0
+    -   Giá trị in ra:  2, 2, 1, 0
+
+Câu 3
+Sub1
+A = {7,8,9}
+B = {7,8,9}
+P = address of A
+Q = address of B
+Sub1(P, Q)
+
+Sub2
+tham trị:   R ==> P ==> address of A
+tham biến:  S ==> Q ==> address of B
+
+
+// line1 R^[1] := R^[1] + 10: object A bị thay đổi: A[1] = 7 + 10 = 17
+// line2 S^[1] := S^[1] + 10: object B bị thay đổi: B[1] = 7 + 10 = 17
+// line3  R := S == > vì R là tham trị nên sau khi ra khỏi chương trình R vẫn giữ nguyên giá trị
+// line4  S := R ==> vì S là tham biến nên sau khi ra khỏi chương trình S sẽ mang giá trị R là address of A
+
+Câu 4
+A:  expr2 is protected: expr2 = n = 5 không đổi trong quá trình lặp. 
+    index không protected: index = i = 1, do không bị protected nên giá trị index sẽ bị thay đổi bởi i
+    => Sau mỗi lần lặp index sẽ giảm 1 (trong body) và sau đó lại tăng lên 1 (do cơ chế vòng lặp) ==> index không đổi giá trị
+    => lặp vô hạn
+
+B: index is protected: index = i = 1 không bị thay đổi bởi i. Sau mỗi lần lặp index sẽ tăng lên 1 đơn vị.
+    => expr2 không protected: expr2 = n = 5, do không bị protected nên expr2 sẽ bị thay đổi bởi n
+    => expr2 cũng tăng sau mỗi lần lặp 1 đơn vị
+    ==> lặp vô hạn
+
+C: No protected : index bị thay đổi bởi i và expr2 bị thay đổi bởi n sau mỗi lần lặp
+    => Sau mỗi lần lặp index sẽ giảm 1 (trong body) và sau đó lại tăng lên 1 (do cơ chế vòng lặp) ==> index không đổi giá trị
+    => expr2 cũng tăng sau mỗi lần lặp 1 đơn vị
+    ==> lặp vô hạn
+
+D: both index and expr2 are protected:
+    => index is protected: index = i = 1 không bị thay đổi bởi i. Sau mỗi lần lặp index sẽ tăng lên 1 đơn vị.
+    => expr2 is protected: expr2 = n = 5 không đổi trong quá trình lặp. 
+    => lặp 5 lần 

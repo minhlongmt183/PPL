@@ -1,0 +1,13 @@
+        Function: init
+        Parameter: param
+        Body:
+            If param > 0 Then
+                Var : board[1000];
+                Var: i;
+                For (i=0,i<param,1) Do
+                    board[i]=-1;
+                EndFor.
+                Return board;
+            EndIf.
+        EndBody.
+       

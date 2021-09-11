@@ -1,0 +1,7 @@
+
+        Function: main
+        Body:
+            Var: str = "123";
+            print(str);
+        EndBody.
+        

@@ -1,0 +1,12 @@
+
+        Var: x[20];
+        Function: main
+        Body:
+        While x[1] && ! x[2] Do
+            Do
+                Var: x;
+                x = 1;
+            While x[1] EndDo.
+        EndWhile.
+        EndBody.
+        

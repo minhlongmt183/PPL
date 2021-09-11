@@ -1,0 +1,10 @@
+Function: diQuayODau
+Body:
+    Return 1900;
+EndBody.
+
+Function: main
+Body:
+    Var: choDeQuay;
+    choDeQuay = diQuayODau;
+EndBody.

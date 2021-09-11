@@ -1,0 +1,12 @@
+
+        Function: f1
+        Body:
+        EndBody.
+
+        Function: main
+        Body:
+            Var: a=1;
+            If a Then f1();
+            EndIf.
+        EndBody.
+        

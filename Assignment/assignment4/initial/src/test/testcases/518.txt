@@ -1,0 +1,18 @@
+
+        Var: x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Function: main
+        Body:
+            print(string_of_int(foo(x, 10)));
+        EndBody.
+        Function: foo
+        Parameter: x[10], length
+        Body:
+            If length == 0 Then
+                Return 0;
+            ElseIf length == 1 Then
+                Return x[0];
+            Else
+                Return x[length - 1] + foo(x, length -  1);
+            EndIf.
+        EndBody.
+        

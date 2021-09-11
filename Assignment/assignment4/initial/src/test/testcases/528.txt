@@ -1,0 +1,33 @@
+
+        Function: main
+        Body:
+            Var: i = 0;
+            Do
+                Var: flag = False;
+                Var: j = 0;
+                While j < i \ 2 + 1 Do
+                    flag = flag || foo(j, i);
+                    If flag Then
+                        Break;
+                    EndIf.
+                    j = j + 1;
+                EndWhile.
+                If flag Then
+                    print(string_of_int(i));
+                EndIf.
+                i = i + 1;
+            While i < 20 EndDo.
+        EndBody.
+        Function: foo
+        Parameter: number, n
+        Body:
+            Var: iter = 0;
+            Var: upper = 0, sum = 0e1;
+            upper = 2 * number - 1;
+            For (iter = 1, iter <= int_of_float(float_to_int(upper)), int_of_float(1.24)) Do 
+                sum = sum +. float_to_int(iter);
+                iter = iter + 1;
+            EndFor.
+            Return  !(sum =/= float_to_int(n));
+        EndBody.
+        

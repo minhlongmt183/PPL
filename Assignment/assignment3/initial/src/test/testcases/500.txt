@@ -1,0 +1,13 @@
+Var: x[5], y;
+
+Function: foo
+Parameter: arr[5]
+Body:
+    Return;
+EndBody.
+
+Function: main
+Body:
+    Var: m;
+    foo({1,2,3,4,5});
+EndBody.

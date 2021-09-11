@@ -1,0 +1,8 @@
+        Function: foo
+        Parameter: n1,n2
+        Body:
+            If n2==0 Then Return --n1;
+            Else Return foo(n2,n1%n2);
+            EndIf.
+        EndBody.
+       

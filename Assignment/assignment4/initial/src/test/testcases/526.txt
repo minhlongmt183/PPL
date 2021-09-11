@@ -1,0 +1,27 @@
+
+        Var: arr[10] = {1,2,3,4,5,6,7,8,9,10};
+        Function: main
+        Body:
+            Var: min = 1;
+            Var: max = 1;
+            Var: i = 1;
+            min = arr[0];
+            max = arr[0];
+            While i < 10 Do
+                If min > arr[i] Then
+                    min = arr[i];
+                EndIf.
+                If max < arr[i] Then
+                    If i == 9 Then
+                        If max > min Then
+                            print("aaassd");
+                        EndIf.
+                    EndIf.
+                    max = arr[i];
+                EndIf.
+                i = i + 1;
+            EndWhile.
+            print(string_of_int(min));
+            print(string_of_int(max));
+        EndBody.
+        
